@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 05: Star</title>
+</head>
+<body>
+  <script>
+    let star_1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let star_2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function checkStr(str) {
+      for (let i = 0; i < star_1.length; i++) {
+        if (str === star_1[i]) {
+          return star_2[i];
+        }
+      }
+      return false;
+    }
+    let star = prompt("Nhập ngôi sao muốn tìm");
+    if (checkStr(star)) {
+      console.log("Đã tìm thấy ngôi sao tương ứng là: " + star);
+    } else {
+      console.log("Không tìm thấy ngôi sao nào");
+    }
+  </script>
+</body>
+</html>

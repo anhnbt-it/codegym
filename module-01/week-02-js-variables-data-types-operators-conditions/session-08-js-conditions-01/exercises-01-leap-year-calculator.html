@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leap Year Calculator</title>
+</head>
+<body>
+  <form action="">
+    <label for="year">Input Year</label>
+    <input type="text" value="" id="year" name="year" placeholder="Input Year"><br>
+  </form>
+  <script>
+    let year = parseInt(prompt("Enter a year"));
+    let isLeap = ((year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0));
+
+    // if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    //   alert(year + " is a leap year");
+    // }
+    if (isLeap) {
+      alert(year + " is a leap year");
+    } else {
+      alert(year + " is NOT a leap year")
+    }
+  </script>
+</body>
+</html>

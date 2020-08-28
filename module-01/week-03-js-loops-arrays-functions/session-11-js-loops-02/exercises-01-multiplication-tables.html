@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 01: Multiplication Tables</title>
+  <style>
+    .wrap {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    }
+
+    h1 {
+      color: #0067b8;
+      text-transform: uppercase;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 3px solid #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="text-center">Multiplication Tables</h1>
+    <div id="table"></div>
+  </div>
+  <script>
+    let table = "<table>";
+    for (let i = 2; i < 10; i++) {
+      table += "<tr>";
+      for (let j = 1; j < 10; j++) {
+        table += "<td class=\"text-center\">" + i + "x" + j + "=" + (i * j) + "</td>";
+      }
+      table += "</tr>";
+    }
+    table += "</table";
+    document.getElementById("table").innerHTML = table;
+  </script>
+</body>
+</html>

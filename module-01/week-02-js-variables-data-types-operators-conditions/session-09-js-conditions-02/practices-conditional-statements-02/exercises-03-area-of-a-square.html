@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 03: Area of a Square</title>
+</head>
+<body>
+  <form action="" method="POST">
+      <label for="sideLength">Enter side length (meters)</label><br>
+      <input type="number" id="sideLength" name="sideLength">
+      <button type="submit" onclick="calc(); return false;">Calculate</button> <button type="reset">Clear</button>
+      <p id="result">Area A = ? m<sup>2</sup></p>
+  </form>
+  <script>
+    function getAreaOfSquare(length) {
+      return length*length;
+    }
+    function calc() {
+      let length = parseFloat(document.getElementById('sideLength').value);
+      if (isNaN(length) || length <= 0) {
+        alert("Please enter length (meters) again!");
+        document.getElementById('sideLength').value = '';
+        document.getElementById('sideLength').focus();
+        return false;
+      }
+      document.getElementById("result").innerHTML = "Area A = " + getAreaOfSquare(length) + " m<sup>2</sup>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 04: Number of days in a month</title>
+  </head>
+  <body>
+    <form action="" method="POST">
+      <input type="number" name="month" id="month" value="1" />
+      <button type="submit" onclick="getNumberOfDaysInAMonth(); return false;">
+        Tính số ngày
+      </button>
+    </form>
+    <script>
+      function getNumberOfDaysInAMonth() {
+        // let date = new Date();
+        // let year = date.getFullYear();
+        let month = parseInt(document.getElementById("month").value);
+        // return alert(new Date(year, month, 0).getDate());
+        let daysInMonth = 31;
+        switch (month) {
+          case 2:
+            daysInMonth = 29;
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            daysInMonth = 30;
+            break;
+        }
+        alert("Tháng " + month + " có " + daysInMonth + " ngày");
+      }
+    </script>
+  </body>
+</html>

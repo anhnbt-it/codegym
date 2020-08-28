@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <style>
+      body {
+        font-family: "Lucida Grande", Tahoma, Arial, sans-serif;
+      }
+      .bg-white {
+        background-color: white;
+      }
+      hr {
+        border-top: 1px dotted;
+      }
+      .font-weight-bold {
+        font-weight: bold;
+      }
+      form textarea {
+        width: 100%;
+      }
+      form div span {
+        margin: 0 0.3em 0 0;
+        float: left;
+      }
+      form div span label {
+        margin: 0;
+        display: block;
+      }
+      form input.other {
+        margin-left: 25px;
+      }
+      form div {
+        padding: 10px;
+        clear: both;
+      }
+      tbody tr:hover {
+        background-color: #ffffcf;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      caption {
+        text-align: left;
+        margin-bottom: 6px;
+      }
+      tr:nth-child(even) {
+        background-color: #f5f5f5;
+      }
+      td, th {
+        padding: 4px 6px;
+        border: 1px solid #dedede;
+      }
+      thead tr {
+        background-color: #e6e6e6;
+      }
+      tbody th {
+        text-align: left;
+      }
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-white">
+      <h1>Market Research Survey</h1>
+      <p>Please take a few moments to complete this satisfaction survey.</p>
+      <hr />
+      <form action="" method="post" id="myForm">
+        <div>
+          <label for="age" class="font-weight-bold"
+            >What is your age range?</label
+          ><br />
+          <select name="age" id="age">
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-50">35-50</option>
+            <option value="50+">50+</option>
+          </select>
+        </div>
+        <div class="example">
+          <label for="income" class="font-weight-bold"
+            >What is your yearly income range?</label
+          ><br />
+          <select name="income" id="income">
+            <option value="$0 - $25,000">$0 - $25,000</option>
+            <option value="$25,001 - $50,000">$25,001 - $50,000</option>
+            <option value="$50,001 - $100,000">$50,001 - $100,000</option>
+            <option value="$100,000+">$100,000+</option>
+          </select>
+        </div>
+        <div class="example">
+          <label for="gender" class="font-weight-bold">Gender Identity</label
+          ><br />
+          <input type="radio" name="gender" id="gender_0" />
+          <label for="gender_0">Male</label><br />
+          <input type="radio" name="gender" id="gender_1" />
+          <label for="gender_1">Female</label><br />
+          <input type="radio" name="gender" id="gender_2" />
+          <label for="gender_2">Nonbinary</label><br />
+          <input type="radio" name="gender" id="gender_3" />
+          <label for="gender_3">Other</label><br />
+          <input
+            type="text"
+            name="gender_other"
+            id="gender_other"
+            class="other"
+          />
+        </div>
+        <div class="example">
+          <label for="products" class="font-weight-bold"
+            >Which of the following products have your purchased in the last 2
+            months. Please check all that apply.</label
+          ><br />
+          <input type="checkbox" name="products" id="product_1" />
+          <label for="product_1">Product 1</label><br />
+          <input type="checkbox" name="products" id="product_2" />
+          <label for="product_2">Product 2</label><br />
+          <input type="checkbox" name="products" id="product_3" />
+          <label for="product_3">Product 3</label><br />
+        </div>
+        <div class="example">
+          <label for="use_product" class="font-weight-bold"
+            >How often would you use our new product?</label
+          ><br />
+          <input type="radio" name="use_product" id="daily" />
+          <label for="daily">Daily</label><br />
+          <input type="radio" name="use_product" id="weekly" />
+          <label for="weekly">Weekly</label><br />
+          <input type="radio" name="use_product" id="monthly" />
+          <label for="monthly">Monthly</label><br />
+        </div>
+        <div class="example">
+          <label for="" class="font-weight-bold"
+            >What would you pay for the new product?</label
+          ><br />
+          <span>$</span>
+          <span
+            ><input type="text" name="dollars" id="dollars" size="8" />
+            <label for="dollars">Dollars</label></span
+          ><span>.</span
+          ><span
+            ><input type="text" name="cents" id="cents" size="3" />
+            <label for="cents">Cents</label></span
+          >
+        </div>
+        <div class="example">
+          <label for="" class="font-weight-bold"
+            >What features would you like to see in the new product.</label
+          ><br />
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="example">
+          <table cellspacing="0">
+            <caption>
+              Please rate your level of agreement with the following statements.
+            </caption>
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+                <th>Strongly Agree</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Our products are priced fairly.</th>
+                <td>
+                  <input type="radio" name="priced_fairly" /><br />
+                  <label for="">1</label>
+                </td>
+                <td>
+                  <input type="radio" name="priced_fairly" /><br />
+                  <label for="">2</label>
+                </td>
+                <td>
+                  <input type="radio" name="priced_fairly" /><br />
+                  <label for="">3</label>
+                </td>
+                <td>
+                  <input type="radio" name="priced_fairly" /><br />
+                  <label for="">4</label>
+                </td>
+              </tr>
+              <tr>
+                <th>Our products are high quality.</th>
+                <td>
+                  <input type="radio" name="high_quality" /><br />
+                  <label for="">1</label>
+                </td>
+                <td>
+                  <input type="radio" name="high_quality" /><br />
+                  <label for="">2</label>
+                </td>
+                <td>
+                  <input type="radio" name="high_quality" /><br />
+                  <label for="">3</label>
+                </td>
+                <td>
+                  <input type="radio" name="high_quality" /><br />
+                  <label for="">4</label>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  You would recommend our product to a friend or coworker.
+                </th>
+                <td>
+                  <input type="radio" name="friend_or_coworker" /><br />
+                  <label for="">1</label>
+                </td>
+                <td>
+                  <input type="radio" name="friend_or_coworker" /><br />
+                  <label for="">2</label>
+                </td>
+                <td>
+                  <input type="radio" name="friend_or_coworker" /><br />
+                  <label for="">3</label>
+                </td>
+                <td>
+                  <input type="radio" name="friend_or_coworker" /><br />
+                  <label for="">4</label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practive Reverse Array 02</title>
+</head>
+<body>
+  <script>
+    let myArray = [-3, 5, 1, 3, 2, 10];
+    // myArray.reverse();
+    // console.log(myArray);
+    let first = 0;
+    let last = Number(myArray.length) - 1;
+    while (first < last) {
+      let temp = myArray[first];
+      myArray[first] = myArray[last];
+      myArray[last] = temp; 
+      first++;
+      last--;
+    }
+    console.log(myArray);
+    document.write(myArray);
+  </script>
+</body>
+</html>

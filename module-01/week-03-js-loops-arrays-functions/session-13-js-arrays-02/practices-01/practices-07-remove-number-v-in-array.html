@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 06: Find V in array</title>
+</head>
+<body>
+  <p id="output"></p>
+  <label for="numberRemove">Nhập vào số muốn xóa</label>
+  <input type="number" id="numberRemove" value="" placeholder="Nhập số muốn xóa"><br>
+  <button type="button" onclick="btnRemoveNumber(); return false;">Remove Number</button>
+  <script>
+    let numbers = [];
+    let max = 0;
+    for (let i = 0; i < 10; i++) {
+      let num = parseInt(prompt("Nhập một số nguyên thứ " + i));
+      if (isNaN(num)) {
+        alert("Vui lòng nhập lại một số nguyên");
+        location.reload();
+        break;
+      } else {
+        numbers[i] = num;
+      }
+    }
+    document.getElementById("output").innerHTML = "Mảng bạn đã nhập " + numbers.toString();
+    function btnRemoveNumber() {
+      let numberRemove = parseInt(document.getElementById("numberRemove").value);
+      if (!isNaN(numberRemove)) {
+        let indexOfV = numbers.indexOf(numberRemove);
+        if (indexOfV > -1) {
+          numbers.splice(indexOfV, 1);
+          document.getElementById("output").innerHTML += "<br>Bạn đã xóa " + numberRemove + " khỏi mảng. Mảng mới hiện giờ là: " + numbers.toString();
+        } else {
+          alert(numberRemove + " không có trong mảng");
+          document.getElementById("numberRemove").focus();
+        }
+      } else {
+        alert("Vui lòng nhập lại một số muốn xóa trong mảng");
+        document.getElementById("numberRemove").focus();
+      }
+    }
+  </script>
+</body>
+</html>

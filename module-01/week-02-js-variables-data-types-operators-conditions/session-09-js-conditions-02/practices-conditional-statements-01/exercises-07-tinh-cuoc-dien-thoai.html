@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 05: Tính cước điện thoại</title>
+  <style>
+    .mb-10 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tính cước điện thoại</h1>
+    <pre>
+      600 đồng cho mỗi gọi của 50 phút đầu tiên.
+      400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+      200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+    </pre>
+  <form action="" method="POST">
+      <div class="mb-10">
+        <label for="minutes">Nhập số phút đã sử dụng</label><br>
+        <input type="number" id="minutes" name="minutes">
+      </div>
+      <div class="mb-10">
+        <button type="submit" onclick="calc(); return false;">Tính cước</button>
+      </div>
+  </form>
+  <script>
+    function calc() {
+      let phi = 0;
+      let minutes = parseFloat(document.getElementById("minutes").value);
+      if (minutes <= 0) {
+        alert("Số phút không hợp lệ!");
+      }
+      if (minutes <= 50) {
+        phi = 600;
+      } else if (minutes <= 200) {
+        phi = 400;
+      } else {
+        phi = 200;
+      }
+      let total = phi*minutes;
+      alert("Cước điện thoại đã dùng là: " + total.toLocaleString('en-US', {style : 'currency', currency : 'VND'}));
+    }
+  </script>
+</body>
+</html>

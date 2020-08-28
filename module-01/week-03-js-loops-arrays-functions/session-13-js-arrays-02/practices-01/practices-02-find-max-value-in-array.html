@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 02: Find max value in array</title>
+</head>
+<body>
+  <script>
+    let max = 0;
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+      let num = parseInt(prompt("Enter a number"));
+      if (isNaN(num)) {
+        alert("Please enter a number");
+      } else {
+        numbers[i] = num;
+      }
+    }
+    max = numbers[0];
+    numbers.forEach(findMaxValue);
+    function findMaxValue(value) {
+      if (max < value) {
+        max = value;
+      }
+    }
+    document.write("Các số bạn đã nhập " + numbers.toString() + " có phần tử lớn nhất là: " + max + " thuộc vị trí " + numbers.indexOf(max) + " trong mảng");
+  </script>
+</body>
+</html>

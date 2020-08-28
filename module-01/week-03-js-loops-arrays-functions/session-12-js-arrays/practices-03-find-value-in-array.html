@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 03: Find value in array</title>
+</head>
+<body>
+  <script>
+    let value = parseInt(prompt("Enter a number"));
+    let find = false;
+    if (isNaN(value)) {
+      alert("Please enter a number");
+    } else {
+      let numbers = [-3, 5, 1, 3, 2, 10];
+      for (let i = 0; i < numbers.length; i++) {
+        if (value === Number(numbers[i])) {
+          alert(value + " is found in " + numbers);
+          find = true;
+        }
+      }
+      if (!find) {
+        alert("Not found. Please try again!");
+      }
+    }
+  </script>
+</body>
+</html>

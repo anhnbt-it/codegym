@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 06: Total 30 number division remainder 7</title>
+</head>
+<body>
+  <script>
+    let count = 1;
+    let countNumDivionForSeven = 1;
+    let total = 0;
+    while(true) {
+      if (count % 7 === 0) {
+        total += count;
+        document.write(countNumDivionForSeven + ":" + count + "<br>");
+        countNumDivionForSeven++;
+      }
+      if (countNumDivionForSeven > 30) {
+        break;
+      }
+      count++;
+    }
+    document.write("<br>Total is: " + total);
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP Exercise 05: Area and Perimeter of a Rectangle</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="myCanvas"></div>
+  <div id="output"></div>
+  <button onclick="setWidthHeight();">Set Width/Height</button>
+  <button onclick="getArea();">Get Area</button>
+  <button onclick="getPerimeter();">Get Perimeter</button>
+  <script>
+      function Rectangle(width, height) {
+        this.width = parseInt(width);
+        this.height = parseInt(height);
+        this.setWidth = function(w) {
+          this.width = w;
+        };
+        this.setHeight = function(h) {
+          this.height = h;
+        };
+        this.getWidth = function() {
+          return this.width;
+        };
+        this.getHeight = function() {
+          return this.height;
+        }
+        this.area = function() {
+          return width * height;
+        };
+        this.perimeter = function() {
+          return (width + height) * 2;
+        };
+
+        this.draw = function() {
+          let canvas = document.createElement('canvas'); // Tạo mới phần tử Canvas
+          canvas.width = this.width;
+          canvas.height = this.height;
+          if (canvas.getContext) { // Kiểm tra xem trình duyệt có hỗ trợ vẽ Canvas hay không
+            let ctx = canvas.getContext('2d'); // Tạo đối tượng để vẽ
+            ctx.fillStyle = '#FF0000'; // Chọn màu
+            ctx.fillRect(0, 0, this.width, this.height); // Vẽ một hình chữ nhật
+            document.getElementById('myCanvas').appendChild(canvas); // Vẽ đối tượng Canvas trong phần tử myCanvas
+          } else {
+            console.log("Your browser does not support the HTML5 canvas tag.");
+          }
+
+        }
+        this.reDraw = function() {
+          let canvas = document.querySelector('canvas'); // Tìm phần tử Canvas
+          canvas.width = this.width;
+          canvas.height = this.height;
+          if (canvas.getContext) { // Kiểm tra xem trình duyệt có hỗ trợ vẽ Canvas hay không
+            let ctx = canvas.getContext('2d'); // Tạo đối tượng để vẽ
+            ctx.fillStyle = '#FF0000'; // Chọn màu
+            ctx.fillRect(0, 0, this.width, this.height); // Vẽ một hình theo kích thước đã đặt
+            document.getElementById('myCanvas').appendChild(canvas); // Vẽ đối tượng Canvas trong phần tử myCanvas
+          } else {
+            console.log("Trình duyệt không hỗ trợ!");
+          }
+        }
+      }
+      let rectangle = new Rectangle(300, 150);
+      window.onload = rectangle.draw();
+      function setWidthHeight() {
+        let w = parseFloat(prompt("Enter Width"));
+        let h = parseFloat(prompt("Enter Height"));
+        if (isNaN(w) || isNaN(h)) {
+          alert("Not a Number. Try again!");
+          return false;
+        }
+        rectangle.setWidth(w);
+        rectangle.setHeight(h);
+        setTimeout(rectangle.reDraw(), 2000);
+      }
+      function getArea() {
+        document.getElementById('output').innerHTML = "S: " + rectangle.getWidth() + " * " + rectangle.getHeight() + " = " + rectangle.area();
+      }
+      function getPerimeter() {
+        document.getElementById('output').innerHTML = "P: (" + rectangle.getWidth() + " + " + rectangle.getHeight() + ") * 2 = " + rectangle.perimeter();
+      }
+  </script>
+</body>
+</html>

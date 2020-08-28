@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary</title>
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .wrap {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    }
+
+    h1 {
+      color: #0067b8;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 12px 20px;
+      margin: 14px 0 8px 0;
+      text-align: center;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid transparent;
+      outline: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .bg-primary {
+      background-color: #0078D4;
+      color: #fff;
+    }
+
+    .bg-dark {
+      color: #fff;
+      background: #000;
+    }
+
+    .mb-2 {
+      margin-bottom: 10px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .my-form input[type=text],
+    .my-form input[type=number],
+    .my-form select {
+      margin-left: 6px;
+      padding: 12px 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px #ddd;
+      display: inline-block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    .table-border th,
+    .table-border td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .text-danger {
+      color: #dc3545;
+    }
+
+    .text-primary {
+      color: #0078D4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap text-center">
+    <h1>Từ điển Anh -> Việt</h1>
+    <form action="" class="my-form" method="POST">
+      <div class="mb-2">
+        <label for="text">Nhập từ cần dịch. VD: "Hello", "Bye", "Thank you", "Bird"</label>
+      </div>
+      <div class="mb-2">
+        <input type="text" id="text" value="Hello" required>
+      </div>
+      <div id="output" class="mb-2"></div>
+      <div class="mb-2">
+        <input class="btn bg-primary" type="submit" onclick="translateEnToVi(); return false;" value="Translate">
+        <input class="btn bg-dark" type="reset">
+      </div>
+    </form>
+  </div>
+  <script>
+    function translateEnToVi() {
+      let arrsEn = ["hello", "bye", "thank you", "bird"];
+      let arrsVi = ["Xin chào", "Tạm biệt", "Cảm ơn", "Chim"];
+      let text = document.getElementById("text").value;
+      text = text.toLowerCase();
+      if (text !== '') {
+        if (arrsEn.includes(text)) {
+          document.getElementById("output").innerHTML = "<span class=\"text-primary\">" + arrsVi[arrsEn.indexOf(text)] + "</span>";
+        } else {
+          document.getElementById("output").innerHTML = "<span class=\"text-danger\">Không tìm thấy từ cần dịch</span>";
+        }
+      } else {
+        document.getElementById("output").innerHTML = "<span class=\"text-danger\">Vui lòng nhập từ cần dịch</span>";
+      }
+    }
+  </script>
+</body>
+
+</html>

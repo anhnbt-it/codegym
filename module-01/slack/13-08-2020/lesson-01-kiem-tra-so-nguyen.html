@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra số nguyên dương hay âm</title>
+</head>
+<body>
+  <script>
+    let a = parseFloat(prompt("Nhập một số nguyên bất kỳ"));
+    if (isNaN(a) || Number.isInteger(a) === false) {
+      document.write(a + " không phải là số nguyên");
+      console.log(Number.isInteger(a));
+    } else {
+      if (a > 0) {
+        document.write(a + " là số dương");
+      } else if (a < 0) {
+        document.write(a + " là số âm");
+      } else {
+        document.write(a + " = 0");
+      }
+    }
+  </script>
+</body>
+</html>

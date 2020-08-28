@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 03: Factorial</title>
+</head>
+<body>
+  <script>
+    function factorial(n) {
+      let total = 1;
+      if (n < 0) {
+        console.log(n + " không phải là số nguyên dương. Vui lòng thử lại!");
+        return false;
+      }
+      if (n === 0 || n === 1) {
+        return 1;
+      }
+      for (let i = 1; i <= n; i++) {
+        total *= i;
+      }
+      return total;
+    }
+    let number = parseFloat(prompt("Enter a number"));
+    if (isNaN(number)) {
+      console.log("Not a Number");
+    } else {
+      if (factorial(number)) {
+        console.log(number + "! = " + factorial(number));
+      }
+    }
+  </script>
+</body>
+</html>

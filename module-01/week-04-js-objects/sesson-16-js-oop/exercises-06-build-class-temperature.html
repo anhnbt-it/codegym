@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP Exercise 06: Build class Temperature</title>
+</head>
+<body>
+  <script>
+    function Temperature(celsius) {
+      this.celsius = (isNaN(celsius) || celsius <= -273) ? -273 : parseFloat(celsius);
+      this.celsiusToFahrenheit = function() {
+        return "Formula: (" + celsius + "°C × 9/5) + 32 = " + ((celsius * 9/5) + 32) + "°F";
+      };
+      this.celsiusToKelvin = function() {
+        return "Formula: " + celsius + "°C + 273.15 = " + (celsius + 273.15) + "K";
+      }
+    }
+    let temp = new Temperature(25);
+    console.log(temp.celsiusToFahrenheit());
+    console.log(temp.celsiusToKelvin());
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP Exercise 07: Build class Mobile</title>
+</head>
+<body>
+  <script>
+    function Mobile(name) {
+      this.name = name;
+      this.battery = 100;
+      this.inbox = [];
+      this.sent = [];
+      this.status = true;
+      this.getStatus = function() {
+        return this.status;
+      };
+      this.setStatus = function(value) {
+        this.status = value;
+      };
+      this.getBattery = function() {
+        return this.battery;
+      };
+      this.chargeBattery = function(value) {
+        this.battery = (value > 100) ? 100 : value;
+      };
+      this.sendMessage = function(from, msg) {
+        this.sent.push(msg);
+        from.inbox.push(msg);
+        if (this.battery <= 0) {
+          this.status = false;
+          return false;
+        }
+        if (this.status) {
+          this.battery--;
+          return true;
+        }
+      };
+      this.getAllSent = function() {
+        if (this.battery <= 0) {
+          this.status = false;
+          return false;
+        }
+        if (this.status) {
+          this.battery--;
+          if (this.sent.length < 1) {
+            console.log("No data.");
+            return false;
+          }
+          return this.sent;
+        }
+      };
+      this.getAllInbox = function() { // 1 new message
+        if (this.battery <= 0) {
+          this.status = false;
+          return false;
+        }
+        if (this.status) {
+          this.battery--;
+          if (this.inbox.length < 1) {
+            console.log("No data.");
+            return false;
+          }
+          return this.inbox;
+        }
+      }
+    }
+    let nokia = new Mobile("Nokia 2720 Flip");
+    let iphone = new Mobile("iPhone 11 Pro Max");
+  </script>
+</body>
+</html>

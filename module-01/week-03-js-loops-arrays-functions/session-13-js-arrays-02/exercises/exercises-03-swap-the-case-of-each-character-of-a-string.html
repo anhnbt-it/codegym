@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swap the case of each character of a string</title>
+</head>
+<body>
+  <script>
+    let str = prompt("Enter a string");
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for (let i = 0; i < str.length; i++) {
+      if (LOWER.includes(str[i])) {
+        result.push(str[i].toUpperCase());
+      } else if (UPPER.includes(str[i])) {
+        result.push(str[i].toLowerCase());
+      } else {
+        result.push(str[i]);
+      }
+    }
+    document.write(result.join(""));
+  </script>
+</body>
+</html>

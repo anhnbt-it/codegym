@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      div {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="inputA">Input A</label>
+      <input type="number" name="inputA" id="inputA" />
+      <label for="inputB">Input B</label>
+      <input type="number" name="inputB" id="inputB" />
+    </div>
+    <div>
+      <button onclick="addition()">Addition (+)</button>
+      <button onclick="subtraction()">Subtraction (-)</button>
+      <button onclick="muliplitcation()">Multiplication (*)</button>
+      <button onclick="division()">Division (/)</button>
+    </div>
+    <div id="result"></div>
+    <script>
+      function addition() {
+        let a = parseInt(document.getElementById("inputA").value);
+        let b = parseInt(document.getElementById("inputB").value);
+
+        document.getElementById("result").innerText = a + b;
+      }
+
+      function subtraction() {
+        let a = parseInt(document.getElementById("inputA").value);
+        let b = parseInt(document.getElementById("inputB").value);
+
+        document.getElementById("result").innerText = a - b;
+      }
+
+      function muliplitcation() {
+        let a = parseInt(document.getElementById("inputA").value);
+        let b = parseInt(document.getElementById("inputB").value);
+
+        document.getElementById("result").innerText = a * b;
+      }
+      
+      function division() {
+        let a = parseInt(document.getElementById("inputA").value);
+        let b = parseInt(document.getElementById("inputB").value);
+
+        document.getElementById("result").innerText = a / b;
+      }
+    </script>
+  </body>
+</html>

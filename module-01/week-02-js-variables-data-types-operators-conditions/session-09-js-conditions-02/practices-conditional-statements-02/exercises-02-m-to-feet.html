@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 02: Meters to Feet</title>
+</head>
+<body>
+  <form action="" method="POST">
+      <label for="meters">Enter meters (m)</label><br>
+      <input type="number" id="meters" name="meters">
+      <button type="submit" onclick="mToFeet(document.getElementById('meters').value); return false;">Convert</button> <button type="reset">Clear</button>
+      <p id="result">Meters to Feet formula: ft = m * 3.2808</p>
+  </form>
+  <script>
+    // let m = parseFloat(prompt("Enter meters"));
+    function mToFeet(m) {
+      if (isNaN(m)) {
+        alert("Please enter meters (m) again!")
+      }
+      let result = m * 3.2808;
+      console.log("Feet (ft) is: " + result.toFixed(2));
+      document.getElementById("result").innerHTML = m + " meters = <strong>" + result + " feet</strong>";
+      return result;
+    }
+  </script>
+</body>
+</html>

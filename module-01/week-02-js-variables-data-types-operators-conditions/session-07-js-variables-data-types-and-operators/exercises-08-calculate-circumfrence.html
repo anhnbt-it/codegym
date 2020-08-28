@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate circumference</title>
+</head>
+<body>
+    <script>
+        function circumference(radius) {
+            // Công thức tính chu vi hình tròn: C = 2π * radius
+            if (Number.isNaN(Number.parseFloat(radius))) {
+                return 0;
+            }
+            return 2 * Math.PI * parseFloat(radius);
+        }
+        let radius = parseInt(prompt("Enter Radius (r)"))
+        document.write("c = " + circumference(radius));
+    </script>
+</body>
+</html>

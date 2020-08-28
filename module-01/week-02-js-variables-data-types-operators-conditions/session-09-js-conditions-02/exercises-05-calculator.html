@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 05: Calculator</title>
+    <style>
+      body {
+        font-size: 18px;
+      }
+      .calculator-wrap {
+        border: 5px solid black;
+        width: 350px;
+        padding: 10px;
+      }
+      div {
+        cursor: pointer;
+        text-align: center;
+        line-height: 34px;
+        margin: 8px;
+        border-radius: 4px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 2px;
+        table-layout: fixed;
+      }
+      td,
+      th {
+        text-align: center;
+      }
+      button {
+        width: 100%;
+        cursor: pointer;
+        text-align: center;
+        line-height: 34px;
+        color: blue;
+        font-size: 18px;
+        border: 2px solid #bdc1c6;
+        background-color: #ffffff;
+      }
+      button:focus {
+        border-color: #bdc1c6;
+      }
+      button:disabled {
+        background-color: #bdc1c6;
+        color: gray;
+      }
+      .result {
+        border: 1px solid #bdc1c6;
+        padding: 10px 14px;
+        text-align: right;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="calculator-wrap">
+      <table>
+        <tr>
+          <th colspan="4" class="result" id="result">0</th>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <button data-key="7" onclick="calculator(this)">7</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="8" onclick="calculator(this)">8</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="9" onclick="calculator(this)">9</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button
+                id="division"
+                data-key="÷"
+                class="bg-light font-size-18"
+                onclick="calculator(this)"
+                aria-label="chia"
+              >
+                ÷
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <button data-key="4" onclick="calculator(this)">4</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="5" onclick="calculator(this)">5</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="6" onclick="calculator(this)">6</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button
+                id="muliplitcation"
+                data-key="×"
+                class="bg-light font-size-18"
+                onclick="calculator(this)"
+                aria-label="nhân"
+              >
+                ×
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <button data-key="1" onclick="calculator(this)">1</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="2" onclick="calculator(this)">2</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="3" onclick="calculator(this)">3</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button
+                id="subtraction"
+                data-key="-"
+                class="bg-light font-size-18"
+                onclick="calculator(this)"
+                aria-label="trừ"
+              >
+                -
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <button
+                data-key="C"
+                aria-label="Xóa tất cả"
+                onclick="calculator(this)"
+              >
+                C
+              </button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button data-key="0" onclick="calculator(this)">0</button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button
+                id="equal"
+                data-key="="
+                class="font-weight-bold font-size-18 bg-blue"
+                onclick="calculator(this)"
+              >
+                =
+              </button>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button
+                id="addition"
+                data-key="+"
+                class="bg-light font-size-18"
+                aria-label="cộng"
+                onclick="calculator(this)"
+              >
+                +
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <script>
+      function calculator(button) {
+        let result = document.getElementById("result");
+        let key = button.getAttribute("data-key");
+        if (result.textContent !== "") {
+          if (result.textContent === "0") {
+            result.innerText = "";
+          }
+          switch (key) {
+            case "+":
+            case "-":
+            case "×":
+            case "÷":
+              result.innerText += key;
+              document.getElementById("addition").disabled = true;
+              document.getElementById("subtraction").disabled = true;
+              document.getElementById("muliplitcation").disabled = true;
+              document.getElementById("division").disabled = true;
+              document.getElementById("equal").disabled = true;
+              break;
+            case "=":
+              result.innerText = eval(
+                result.textContent.replace(/×/g, "*").replace(/÷/g, "/")
+              );
+              break;
+            case "C":
+              result.innerText = 0;
+              break;
+            default:
+              document.getElementById("addition").disabled = false;
+              document.getElementById("subtraction").disabled = false;
+              document.getElementById("muliplitcation").disabled = false;
+              document.getElementById("division").disabled = false;
+              document.getElementById("equal").disabled = false;
+              result.innerText += key;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

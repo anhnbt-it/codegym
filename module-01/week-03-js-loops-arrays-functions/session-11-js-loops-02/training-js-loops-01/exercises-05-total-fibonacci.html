@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 03: Total Fibonacci</title>
+</head>
+<body>
+  <script>
+    let temp = 0; // Gọi temp = F(0)
+    let a = 1 // Gọi a = F(1)
+    let fibonacci = 0;
+    let total = 0;
+    for (let i = 0; i < 20; i++) {
+      temp = a; // Khi vòng lặp đầu tiên chạy thì F(0) = 1
+      a += fibonacci; // F(1) = 1
+      fibonacci = temp; // F(0) = 1
+      total += fibonacci;
+    }
+    document.write("Tổng của 20 số đầu tiên trong dãy Fibonacci" + total);
+  </script>
+</body>
+</html>

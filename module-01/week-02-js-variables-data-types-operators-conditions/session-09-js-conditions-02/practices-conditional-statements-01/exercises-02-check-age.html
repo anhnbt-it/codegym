@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 02: Check Age</title>
+</head>
+<body>
+  <script>
+    let age = prompt("Enter age");
+
+    if (isNaN(age)) {
+      document.write("Not a number");
+    } else {
+      if (age < 16) {
+        document.write("Không đủ điều kiện vào học lớp 10");
+      } else {
+        document.write("Đủ điều kiện vào học lớp 10");
+      }
+    }
+  </script>
+</body>
+</html>

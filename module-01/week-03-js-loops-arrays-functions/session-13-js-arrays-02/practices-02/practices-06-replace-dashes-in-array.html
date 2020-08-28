@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practive 06: Replace dashes (-) in array</title>
+</head>
+<body>
+  <script>
+    let arrs = [];
+    let number = parseFloat(prompt("Enter the number of elements in the array"));
+    let i = 0;
+    while (i++ < number) {
+      let str = prompt("Enter a string " + i);
+      document.write(str + "<br>");
+      arrs.push(str);
+    }
+    for (let text of arrs) {
+      document.write(text.replace("-", "_") + "<br>");
+    }
+  </script>
+</body>
+</html>

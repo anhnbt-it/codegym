@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 04: Area of a Rectangle</title>
+</head>
+<body>
+    <script>
+      function getAreaOfRectangle(a, b) {
+        return a * b;
+      }
+      let a = parseFloat(prompt("Enter length side a (meters)"));
+      let b = parseFloat(prompt("Enter length side b (meters)"));
+      if (isNaN(a) || isNaN(b)) {
+        alert("Enter length side a, b again!");
+        return false;
+      }
+      alert("Area is: " + getAreaOfRectangle(a, b) + " (meters2)");
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        color: #222;
+      }
+      div {
+        cursor: pointer;
+        font-family: arial, sans-serif;
+        text-align: center;
+        line-height: 34px;
+        margin: 4px;
+        box-sizing: border-box;
+        position: relative;
+        border-radius: 4px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 2px;
+        table-layout: fixed;
+      }
+      td,
+      th {
+        text-align: center;
+      }
+      .bg-light {
+        background: #dfe1e5;
+        color: #202124;
+        border: 1px solid #dfe1e5;
+      }
+      button {
+        width: 100%;
+        cursor: pointer;
+        font-family: arial, sans-serif;
+        text-align: center;
+        line-height: 34px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        outline: none;
+        background: #f1f3f4;
+        color: #202124;
+        border: 1px solid #f1f3f4;
+      }
+      button:focus {
+        border-color: #bdc1c6;
+      }
+      .display {
+        border: 1px solid #ebebeb;
+        border-radius: 8px;
+        margin: auto;
+        padding: 10px 14px;
+        text-align: right;
+      }
+      .bg-blue {
+        background-color: #4285f4;
+        color: #fff;
+        border: 1px solid #4285f4;
+      }
+      sup {
+        font-size: 13px;
+        line-height: 13px;
+      }
+      .font-weight-bold {
+        font-weight: bold;
+      }
+      .font-size-18 {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th colspan="7" class="display">0</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div><button id="rad_deg" class="bg-light">Rad | Deg</button></div>
+        </td>
+        <td>
+          <div><button id="giai_thua" class="bg-light" aria-label="giai thừa" onclick="calculator(this)">x!</button></div>
+        </td>
+        <td>
+          <div>
+            <button id="dau_ngoac_trai" class="bg-light" aria-label="dấu ngoặc trái" onclick="calculator(this)">(</button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button id="dau_ngoac_phai" class="bg-light" aria-label="dấu ngoặc phải" onclick="calculator(this)">)</button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button id="phan_tram" class="bg-light" aria-label="phần trăm" onclick="calculator(this)">
+              %
+            </button>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button
+              id="clearAll"
+              class="bg-light"
+              onclick="calculator(this)"
+              aria-label="xóa hết"
+            >
+              AC
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <button id="nghich_dao" class="bg-light" aria-label="nghịch đảo" onclick="calculator(this)">Inv</button>
+          </div>
+        </td>
+        <td>
+          <div><button id="sin" class="bg-light" aria-label="sin" onclick="calculator(this)">sin</button></div>
+        </td>
+        <td>
+          <div>
+            <button id="logarit_tu_nhien" class="bg-light" aria-label="logarit tự nhiên" onclick="calculator(this)">In</button>
+          </div>
+        </td>
+        <td>
+          <div><button id="7" onclick="calculator(this)">7</button></div>
+        </td>
+        <td>
+          <div><button id="8" onclick="calculator(this)">8</button></div>
+        </td>
+        <td>
+          <div><button id="9" onclick="calculator(this)">9</button></div>
+        </td>
+        <td>
+          <div>
+            <button
+              id="division"
+              class="bg-light font-size-18"
+              onclick="calculator(this)"
+              aria-label="chia"
+            >
+              ÷
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div><button id="pi" class="bg-light" aria-label="pi" onclick="calculator(this)">π</button></div>
+        </td>
+        <td>
+          <div><button id="cosin" class="bg-light" aria-label="cosin" onclick="calculator(this)">cos</button></div>
+        </td>
+        <td>
+          <div><button id="logarit" class="bg-light" aria-label="logarit" onclick="calculator(this)">log</button></div>
+        </td>
+        <td>
+          <div><button id="4" onclick="calculator(this)">4</button></div>
+        </td>
+        <td>
+          <div><button id="5" onclick="calculator(this)">5</button></div>
+        </td>
+        <td>
+          <div><button id="6" onclick="calculator(this)">6</button></div>
+        </td>
+        <td>
+          <div>
+            <button
+              id="multiplication"
+              class="bg-light font-size-18"
+              onclick="calculator(this)"
+              aria-label="nhân"
+            >
+              ×
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div><button id="so_euler" class="bg-light" aria-label="số euler" onclick="calculator(this)">e</button></div>
+        </td>
+        <td>
+          <div><button id="tang" class="bg-light" aria-label="tang" onclick="calculator(this)">tan</button></div>
+        </td>
+        <td>
+          <div><button id="khai_can" class="bg-light" aria-label="khai căn" onclick="calculator(this)">√</button></div>
+        </td>
+        <td>
+          <div><button id="1" onclick="calculator(this)">1</button></div>
+        </td>
+        <td>
+          <div><button id="2" onclick="calculator(this)">2</button></div>
+        </td>
+        <td>
+          <div><button id="3" onclick="calculator(this)">3</button></div>
+        </td>
+        <td>
+          <div>
+            <button
+              id="subtraction"
+              class="bg-light font-size-18"
+              aria-label="trừ"
+              onclick="calculator(this)"
+            >
+              -
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div><button id="tra_loi" class="bg-light" aria-label="trả lời" onclick="calculator(this)">Ans</button></div>
+        </td>
+        <td>
+          <div><button id="ham_mu" class="bg-light" aria-label="hàm mũ" onclick="calculator(this)">EXP</button></div>
+        </td>
+        <td>
+          <div>
+            <button id="x_mu_y" class="bg-light" aria-label="X mũ Y" onclick="calculator(this)">x<sup>y</sup></button>
+          </div>
+        </td>
+        <td>
+          <div><button id="0" onclick="calculator(this)">0</button></div>
+        </td>
+        <td>
+          <div><button id="decimal" class="font-weight-bold font-size-18" aria-label="phẩy" onclick="calculator(this)">.</button></div>
+        </td>
+        <td>
+          <div><button id="equal" class="font-weight-bold font-size-18 bg-blue" onclick="calculator(this)">=</button></div>
+        </td>
+        <td>
+          <div>
+            <button
+              id="addition"
+              class="bg-light font-size-18"
+              aria-label="cộng"
+              onclick="calculator(this)"
+            >
+              +
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <script>
+      function calculator(button) {
+        console.log(button.getAttribute("id"));
+      }
+    </script>
+  </body>
+</html>

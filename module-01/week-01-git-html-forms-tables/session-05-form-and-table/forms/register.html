@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form đăng ký người dùng</title>
+    <style>
+        label {
+            font-weight: bold;
+        }
+        div {
+            padding: 6px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+            <div>
+                <label for="name">Họ và tên</label><br>
+                <input type="text" name="name" id="name" size="60" maxlength="10" />
+            </div>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div>
+                <label for="phone">Số điện thoại</label><br>
+                <input type="text" name="phone" id="phone">
+            </div>
+            <div>
+                <label for="gender">Giới tính</label><br>
+                <input type="radio" name="gender" id="gender_0" value="Nam" checked /> <label for="gender_0">Nam</label>
+                <input type="radio" name="gender" id="gender_1" value="Nữ" /> <label for="gender_1">Nữ</label>
+            </div>
+            <div>
+                <input type="submit" class="btn" value="Đăng ký" />
+            </div>
+        </form>
+    </div>
+  </body>
+</html>

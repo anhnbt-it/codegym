@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 02: Tính giai thừa của một số nguyên dương</title>
+  <style>
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    .wrap {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0067b8;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 12px 20px;
+      margin: 14px 0 8px 0;
+      text-align: center;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid transparent;
+      outline: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .bg-primary {
+      background-color: #0078D4;
+      color: #fff;
+    }
+
+    .bg-dark {
+      color: #fff;
+      background: #000;
+    }
+
+    .mb-2 {
+      margin-bottom: 10px;
+    }
+
+    .my-form input[type=text], .my-form input[type=number], .my-form select {
+      width: 100%;
+      margin: 8px 0;
+      padding: 12px 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px #ddd;
+      display: inline-block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    #output {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Tính giai thừa</h1>
+    <div id="output"></div>
+    <form action="" class="my-form">
+      <div class="mb-2">
+        <label for="inputNumber">Nhập vào một số bất kỳ</label><br />
+        <input type="number" id="inputNumber" name="inputNumber" value="" />
+      </div>
+      <div class="mb-2">
+        <input class="btn bg-primary" type="submit" onclick="calculate(); return false;" value="Tính toán">
+        <input class="btn bg-dark" type="reset" value="Clear">
+      </div>
+    </form>
+  </div>
+  <script>
+    function calculate() {
+      let number = document.getElementById("inputNumber").value;
+      let total = 1;
+      if (isNaN(number) || number <= 0) {
+        document.getElementById("output").innerHTML = "Vui lòng nhập vào một số nguyên dương!";
+        document.getElementById("inputNumber").focus();
+      } else {
+        for (let i = 1; i <= number; i++) {
+          total *= i;
+        }
+        document.getElementById("output").innerHTML = number + "! = " + total;
+      }
+    }
+  </script>
+</body>
+
+</html>

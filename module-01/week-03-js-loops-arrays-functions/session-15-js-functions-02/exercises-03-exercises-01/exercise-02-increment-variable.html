@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 02: Increment variable</title>
+</head>
+<body>
+  <script>
+    function incrementNumber(num) {
+      if (!isNaN(num)) {
+        num++;
+        return num;
+      } else {
+        return false;
+      }
+    }
+    document.write(incrementNumber(20));
+  </script>
+</body>
+</html>

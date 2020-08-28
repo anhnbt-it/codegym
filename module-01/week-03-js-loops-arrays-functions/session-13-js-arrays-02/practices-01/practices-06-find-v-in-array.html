@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 06: Find V in array</title>
+</head>
+<body>
+  <script>
+    let numbers = [];
+    let max = 0;
+    for (let i = 0; i < 10; i++) {
+      let num = parseInt(prompt("Enter a number of " + i));
+      if (isNaN(num)) {
+        alert("Vui lòng nhập lại một số nguyên");
+        location.reload();
+        break;
+      } else {
+        numbers[i] = num;
+      }
+    }
+    let fiveNumber = parseInt(prompt("Enter number V"));
+    while (isNaN(fiveNumber)) {
+      fiveNumber = parseInt(prompt("Enter number V"));
+    }
+    document.write("Mảng bạn đã nhập " + numbers.toString());
+    if (numbers.includes(fiveNumber)) {
+      document.write("<br>" + fiveNumber + " is in the array");
+    } else {
+      document.write("<br>" + fiveNumber + " is not in the array");
+    }
+  </script>
+</body>
+</html>

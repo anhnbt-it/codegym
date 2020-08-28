@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 08: Good-fast-cheap</title>
+  <style>
+    .mb-2 {
+      margin-bottom: 2px;
+    }
+    span {
+      font-weight: bold;
+      vertical-align: -webkit-baseline-middle;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="mb-2">
+    <label for="good" class="switch">
+      <input type="checkbox" id="good" onclick="clickedButton(this);">
+      <span class="slider round"></span>
+    </label>
+    <span>Good</span>
+  </div>
+  <div class="mb-2">
+    <label for="cheap" class="switch">
+      <input type="checkbox" id="cheap" onclick="clickedButton(this);">
+      <span class="slider round"></span>
+    </label>
+    <span>Cheap</span>
+  </div>
+  <div class="mb-2">
+    <label for="fast" class="switch">
+      <input type="checkbox" id="fast" onclick="clickedButton(this);">
+      <span class="slider round"></span>
+    </label>
+    <span>Fast</span>
+  </div>
+  <script>
+    function clickedButton(e) {
+      let isGoodCheck = document.getElementById("good");
+      let isCheapCheck = document.getElementById("cheap");
+      let isFastCheck = document.getElementById("fast");
+
+        if (isGoodCheck.checked && isFastCheck.checked && isCheapCheck.checked) {
+          if (e.id == "good") {
+            isFastCheck.checked = false;
+          } else if (e.id == "cheap") {
+            isGoodCheck.checked = false;
+          } else {
+            isCheapCheck.checked = false;
+          }
+        }
+    }
+  </script>
+</body>
+</html>

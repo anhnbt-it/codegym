@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Array</title>
+  <style>
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .wrap {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    }
+
+    h1 {
+      color: #0067b8;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 12px 20px;
+      margin: 14px 0 8px 0;
+      text-align: center;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid transparent;
+      outline: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .bg-primary {
+      background-color: #0078D4;
+      color: #fff;
+    }
+
+    .bg-dark {
+      color: #fff;
+      background: #000;
+    }
+
+    .mb-2 {
+      margin-bottom: 10px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .my-form input[type=text],
+    .my-form input[type=number],
+    .my-form select {
+      margin-left: 6px;
+      padding: 12px 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 3px #ddd;
+      display: inline-block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 15px 0;
+    }
+
+    .table-border th,
+    .table-border td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap text-center">
+    <h1>Thực hành Array</h1>
+    <form action="" method="GET" class="my-form">
+      <div class="mb-2"><label for="number">Number</label></div>
+      <div class="mb-2"><input type="text" id="number" value="8"></div>
+      <div class="mb-2">
+        <input class="btn bg-primary" type="submit" value="Add" onclick="addElementToArray(); return false;">
+        <button class="btn bg-dark" type="button" onclick="displayElement();">Display</button>
+      </div>
+    </form>
+  </div>
+  <div class="wrap" id="output"></div>
+  <script>
+    let myArray = [];
+    function addElementToArray() {
+      let number = document.getElementById("number");
+      alert("You enter: " + number.value);
+      myArray.push(number.value);
+      number.value = Math.floor(Math.random() * 100);
+    }
+    function displayElement() {
+      console.log(myArray);
+      console.log(myArray.length);
+      let list = "<ul>";
+      for (let i = 0; i < myArray.length; i++) {
+        list += "<li>Element " + i + " = " + myArray[i] + "</li>";
+      }
+      list += "</ul>";
+      document.getElementById("output").innerHTML = list;
+    }
+  </script>
+</body>
+
+</html>

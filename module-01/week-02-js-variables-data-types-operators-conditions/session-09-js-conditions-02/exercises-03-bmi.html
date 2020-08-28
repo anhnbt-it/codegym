@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 03: BMI</title>
+  <style>
+    span {
+      color: blue;
+      font-weight: bold;
+      font-size: large;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tính chỉ số khối cơ thể BMI</h1>
+  <form action="" method="POST">
+    <label for="weight">Cân nặng (kg)</label><br>
+      <input type="number" name="weight" id="weight" value="60"><br>
+      <label for="height">Chiều cao (cm)</label><br>
+      <input type="number" name="height" id="height" value="174"><br>
+      <button type="submit" onclick="calculate(); return false;">Kết quả</button>
+  </form>
+  <div>
+    <h2>Kết quả BMI của bạn:</h2>
+    <p id="result"></p>
+  </div>
+  <h3>Chỉ số BMI là gì?</h3>
+  <ul>
+    <li>Chỉ số BMI (chỉ số khối cơ thể) là điểm số tiêu chuẩn để xác định mức cân nặng của một người dựa trên chiều cao, cân nặng của cơ thể. Với chỉ số BMI bạn có thể biết được cơ thể của mình thuộc tình trạng: nhẹ cân, bình thường, thừa cân hay béo phì.</li>
+    <li>BMI là từ viết tắt tiếng Anh của: Body Mass Index</li>
+    <li>Chỉ số BMI có sự thay đổi giữa các quốc gia</li>
+  </ul>
+  <h3>Cách tính chỉ số BMI</h3>
+  <p>Công thức tính chỉ số BMI được <a href="https://en.wikipedia.org/wiki/Adolphe_Quetelet">Adolphe Quetelet</a> đưa ra vào năm 1832.</p>
+  <p>Chỉ số BMI được tính bằng cân nặng của bạn (kg) chia cho bình phương chiều cao (mét hoặc cm). Hãy kiểm tra chỉ số BMI của bạn bằng cách:</p>
+  <ul>
+    <li>Nhập cân nặng (kg) và chiều cao (cm) của bạn vào bảng dưới đây.</li>
+    <li>Chọn vào “Kết quả” và kết quả chỉ số BMI của bạn sẽ được trả về.</li>
+  </ul>
+  <script>
+    const UNDERWEIGHT = 18.5;
+    const NORMAL = 25.0;
+    const OVERWEIGHT = 30.0;
+    function calculate() {
+      let weight = parseInt(document.getElementById("weight").value);
+      let height = parseInt(document.getElementById("height").value);
+      let bmi = ((weight / (height * height))*10000).toFixed(1);
+      let text = "Cân nặng và chiều cao của bạn lần lượt là " + weight + " kg và " + height + " cm.<br>Your BMI is: <span>" + bmi + "</span>/";
+      if (bmi < UNDERWEIGHT) {
+        document.getElementById("result").innerHTML = text + "<span>Thiếu cân</span>";
+      } else if(bmi < NORMAL) {
+        document.getElementById("result").innerHTML = text + "<span>Khỏe mạnh</span>";
+      } else if(bmi < OVERWEIGHT) {
+        document.getElementById("result").innerHTML = text + "<span>Thừa cân</span>";
+      } else {
+        document.getElementById("result").innerHTML = text + "<span>Béo phì</span>";
+      }
+    }
+  </script>
+</body>
+</html>

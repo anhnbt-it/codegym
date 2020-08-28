@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 02: Temperature</title>
+</head>
+<body>
+  <script>
+    let temp = parseFloat(prompt("Enter temperature: "));
+    if (isNaN(temp)) {
+      alert("Please enter temperature again!");
+    } else {
+      if (temp > 100) {
+        alert("Hay giam nhiet do");
+      } else if (temp < 20) {
+        alert("Hay tang nhiet do");
+      } else {
+        alert("Nhiet do ban nhap vao la: " + temp);
+      }
+    }
+  </script>
+</body>
+</html>

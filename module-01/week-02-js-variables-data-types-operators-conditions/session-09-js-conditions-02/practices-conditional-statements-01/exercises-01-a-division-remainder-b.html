@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 01: Division Remainder</title>
+</head>
+<body>
+  <script>
+    let a = prompt("Enter number a");
+    let b = prompt("Enter number b");
+
+    if (isNaN(a) || isNaN(b)) {
+      document.write("Not a number");
+    } else {
+      let isRemainder = a % b === 0;
+      if (isRemainder) {
+        document.write(a + " chia het cho " + b);
+      } else {
+        document.write(a + " khong chia het cho " + b);
+      }
+    }
+  </script>
+</body>
+</html>

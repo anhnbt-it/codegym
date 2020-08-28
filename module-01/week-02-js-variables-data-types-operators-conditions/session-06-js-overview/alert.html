@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 7: Alert</title>
+</head>
+<body>
+    <h2>Bài tập 1: Hiển thị kết quả sử dụng hàm alert():</h2>
+    <button type="button" onclick="showMessageWithAlert();">Click Me!</button>
+    <hr>
+    <h2>Bài tập 2: Hiển thị kết quả sử dụng thẻ HTML:</h2>
+    <p id="msgDiv"></p>
+    <button type="button" onclick="showMessageWithHTML();">Click Me!</button>
+    <hr>
+    <h2>Bài tập 3: Hiển thị kết quả sử dụng hàm document.write():</h2>
+    <button type="button" onclick="showMessageWithDOMWrite();">Click Me!</button>
+    <hr>
+    <h2>Bài tập 4: Hiển thị kết quả sử dụng hàm console.log():</h2>
+    <button type="button" onclick="showMessageWithConsole();">Click Me!</button>
+    <script>
+        // debugger
+        // Bài tập 1: Hiển thị kết quả sử dụng hàm alert()
+        function showMessageWithAlert() {
+            alert("Xin chào!");
+        }
+        
+        // Bài tập 2: Hiển thị kết quả sử dụng thẻ HTML
+        function showMessageWithHTML() {
+            document.getElementById("msgDiv").innerHTML = 'Hello World!';
+        }
+
+        // Bài tập 3: Hiển thị kết quả sử dụng hàm document.write()
+        function showMessageWithDOMWrite() {
+            document.write("Hello World!");
+        }
+
+        // Bài tập 4: Hiển thị kết quả sử dụng hàm console.log()
+        function showMessageWithConsole() {
+            console.log("Hello World!");
+        }
+    </script>
+</body>
+</html>

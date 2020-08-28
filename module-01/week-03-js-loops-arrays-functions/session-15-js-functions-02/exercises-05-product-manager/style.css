@@ -1,0 +1,56 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 6px 8px;
+  text-align: left;
+}
+
+img {
+  width: 140px;
+  height: auto;
+}
+
+.form-bg {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #d3d3d3;
+}
+
+button {
+  background-color: #50af50;
+  border: 1px solid #50af50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+th:nth-child(3) {
+  width: 30%;
+  text-align: center;
+  color: #ad3a35;
+}
+
+td:nth-child(3) {
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

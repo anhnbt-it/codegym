@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 05: Công cụ tính khoản vay</title>
+    <style>
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      .wrap {
+        margin: 40px auto;
+        padding: 30px;
+        width: 80%;
+        max-width: 800px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+      }
+      h1 {
+        color: #0067b8;
+        text-transform: uppercase;
+      }
+      .btn {
+        font-size: 15px;
+        padding: 12px 20px;
+        margin: 14px 0 8px 0;
+        text-align: center;
+        border-radius: 4px;
+        display: inline-block;
+        border: 2px solid transparent;
+        outline: 1px solid transparent;
+        cursor: pointer;
+      }
+      .bg-primary {
+        background-color: #0078D4;
+        color: #fff;
+      }
+      .bg-dark {
+        color: #fff;
+        background: #000;
+      }
+      .mb-2 {
+        margin-bottom: 10px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .my-form input[type=text], .my-form input[type=number], .my-form select {
+        margin-left: 6px;
+        padding: 12px 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px #ddd;
+        display: inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 15px 0;
+      }
+      .table-border th, .table-border td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      tfoot td {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1 class="text-center">Công cụ tính khoản vay</h1>
+      <form action="" method="POST" class="my-form">
+        <table>
+          <tr>
+            <td class="text-right"><label for="tien_vay">Số tiền vay là</label></td>
+            <td><input type="number" id="tien_vay" name="tien_vay" value="100000000" /> VNĐ</td>
+          </tr>
+          <tr>
+            <td class="text-right"><label for="lai_suat">Lãi suất hàng tháng (%/năm)</label></td>
+            <td><input type="number" id="lai_suat" name="lai_suat" value="8" /> %</td>
+          </tr>
+          <tr>
+            <td class="text-right"><label for="so_thang_vay">Số tháng cho vay</label></td>
+            <td><input type="number" id="so_thang_vay" name="so_thang_vay" value="6" /> Tháng</td>
+          </tr>
+        </table>
+        <div class="mb-2 text-center">
+          <button class="btn bg-primary" type="submit" onclick="calculate(); return false;">Tính toán</button>
+          <button class="btn bg-dark" type="reset">Clear</button>
+        </div>
+      </form>
+    </div>
+    <div class="wrap" id="output"></div>
+    <script>
+      function calculate() {
+        let tien_vay = parseFloat(document.getElementById("tien_vay").value);
+        let lai_suat = parseFloat(document.getElementById("lai_suat").value);
+        let so_thang_vay = parseFloat(document.getElementById("so_thang_vay").value);
+        if (tien_vay <= 0 || lai_suat <= 0 || so_thang_vay <= 0) {
+          alert("Số tiền không đúng. Vui lòng nhập lại!");
+          document.getElementById("tien_vay").value = '';
+          document.getElementById("tien_vay").focus();
+          return false;
+        } else {
+          let so_tien_con_lai = tien_vay;
+          let goc_phai_tra = Math.floor(so_tien_con_lai/so_thang_vay);
+          let tong_lai = 0;
+          let table = "<table class=\"table-border\">\
+            <tr>\
+              <th>Kỳ hạn</th>\
+              <th>Lãi phải trả</th>\
+              <th>Gốc phải trả</th>\
+              <th>Số tiền phải trả</th>\
+              <th>Số tiền còn lại</th>\
+            </tr>";
+          for (let i = 1; i <= so_thang_vay; i++) {
+            let lai_phai_tra = Math.floor(so_tien_con_lai * (lai_suat/100)/12);
+            let so_tien_phai_tra = lai_phai_tra+goc_phai_tra;
+            so_tien_con_lai -= goc_phai_tra;
+            if (so_tien_con_lai < 10) {
+              so_tien_con_lai = 0;
+            }
+            table += "<tr>";
+              table += "<td>" + i + "</td>\
+              <td>" + lai_phai_tra + "</td>\
+              <td>" + goc_phai_tra + "</td>\
+              <td>" + so_tien_phai_tra + "</td>\
+              <td>" + so_tien_con_lai + "</td>";
+            table += "<tr>";
+            tong_lai += lai_phai_tra;
+          }
+          table += "<tr><td colspan=\"5\">Tổng lãi phải trả: <strong>" + tong_lai + "</strong> VND</td></tr>";
+          table += "<tr><td colspan=\"5\">Tổng số tiền gốc và lãi phải trả: <strong>" + (tien_vay+tong_lai) + "</strong> VND</td></tr>";
+          table += "</table>";
+          document.getElementById("output").innerHTML = table;
+        }
+      }
+    </script>
+  </body>
+</html>

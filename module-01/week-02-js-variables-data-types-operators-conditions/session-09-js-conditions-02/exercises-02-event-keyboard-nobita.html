@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 02: Event Keyboard</title>
+  </head>
+  <body>
+    <div style="position: relative; width: 800px;">
+      <img id="nobitaImage" src="images/nobita.png" alt="Nobita" width="100" />
+    </div>
+    <button type="button" onclick="moveLeft();">Move Left</button>
+    <button type="button" onclick="moveRight();">Move Right</button>
+    <button type="button" onclick="moveUp();">Move Top</button>
+    <button type="button" onclick="moveDown();">Move Bottom</button>
+    <script>
+      window.onload = function() {
+        window.addEventListener("keydown", moveSelection);
+      }
+      let nobita = document.getElementById("nobitaImage");
+      nobita.style.position = "absolute";
+      nobita.style.left = "100px";
+      nobita.style.top = "100px";
+      function moveLeft() {
+        nobita.style.left = parseInt(nobita.style.left) - 10 + "px";
+      }
+      function moveRight() {
+        nobita.style.left = parseInt(nobita.style.left) + 10 + "px";
+      }
+      function moveUp() {
+        nobita.style.top = parseInt(nobita.style.top) - 10 + "px";
+      }
+      function moveDown() {
+        nobita.style.top = parseInt(nobita.style.top) + 10 + "px";
+      }
+      function moveSelection(evt) {
+        switch (evt.keyCode) {
+          case 37:
+            moveLeft();
+            break;
+          case 39:
+            moveRight();
+            break;
+          case 38:
+            moveUp();
+            break;
+          case 40:
+            moveDown();
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practive 08: Sorts small to large values in array</title>
+</head>
+<body>
+  <button onclick="sortingArrays();">Sorting Arrays</button>
+  <div id="output"></div>
+  <script>
+    let arrs = [];
+    for (let i = 0; i < 5; i++) {
+      let number = parseFloat(prompt("Enter a number"));
+      if (isNaN(number) || !Number.isInteger(number)) {
+        alert("Please re-enter the number!");
+        i--;
+      } else {
+        arrs.push(number);
+        document.write(number + "&nbsp;");
+      }
+    }
+    function sortingArrays() {
+      arrs.sort(function(a, b) {
+        return b - a;
+      });
+      document.getElementById("output").innerText = arrs.join(" ");
+    }
+  </script>
+</body>
+</html>

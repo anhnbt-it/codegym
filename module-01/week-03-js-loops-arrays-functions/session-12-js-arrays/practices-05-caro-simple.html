@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practive 05: Caro Simple</title>
+  <style>
+    .wrap {
+      margin: 40px auto;
+      padding: 30px;
+      width: 80%;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    }
+
+    h1 {
+      color: #0067b8;
+      text-transform: uppercase;
+    }
+
+    .mt-2 {
+      margin-top: 10px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 3px solid #dddddd;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 12px 20px;
+      margin: 14px 0 8px 0;
+      text-align: center;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid transparent;
+      outline: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .bg-primary {
+      background-color: #0078D4;
+      color: #fff;
+    }
+
+    .text-danger {
+      color: #dc3545;
+    }
+
+    .font-weight-bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1 class="text-center">Caro Game Simple</h1>
+    <div id="carogame"></div>
+    <div class="mt-2 text-center"><button class="btn bg-primary" type="button" onclick="changeValue();">Change
+        Value</button></div>
+  </div>
+  <script>
+    let carogame = document.getElementById("carogame");
+    let dataRow = [];
+    let board = [];
+    let table = "<table>";
+    for (let i = 0; i < 5; i++) {
+      board[i] = [0, 0, 0, 0, 0];
+    }
+
+    for (let i = 0; i < 5; i++) {
+      table += "<tr>";
+      for (let j = 0; j < 5; j++) {
+        table += "<td class=\"text-center\">" + board[i][j] + "</td>";
+      }
+      table += "</tr>";
+    }
+    table += "</table>";
+    carogame.innerHTML = table;
+    function changeValue() {
+      let posX = parseInt(prompt("Enter X: "));
+      let posY = parseInt(prompt("Enter Y: "));
+      board[posX][posY] = "<span class=\"text-danger font-weight-bold\">x</span>";
+      table = "<table>";
+      for (let i = 0; i < 5; i++) {
+        table += "<tr>";
+        for (let j = 0; j < 5; j++) {
+          table += "<td class=\"text-center\">" + board[i][j] + "</td>";
+        }
+        table += "</tr>";
+      }
+      table += "</table>";
+      carogame.innerHTML = table;
+    }
+  </script>
+</body>
+
+</html>

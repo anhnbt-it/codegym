@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 11: Tính thuế TNCN</title>
+    <style>
+      h1 {
+        color: #0067b8;
+      }
+      .btn {
+        font-size: 15px;
+        padding: 6px 8px;
+        text-align: center;
+        border: 2px solid transparent;
+        outline: 1px solid transparent;
+      }
+      .bg-primary {
+        background-color: #0078D4;
+        color: #fff;
+      }
+      .bg-dark {
+        color: #fff;
+        background: #000;
+      }
+      .mb-2 {
+        margin-bottom: 10px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      select, input {
+        min-width: 160px;
+      }
+      .card {
+        margin: 40px auto;
+        padding: 40px 3% 52px;
+        width: 50%;
+        max-width: 500px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="text-center">Tính thuế TNCN</h1>
+      <form action="" method="POST">
+        <div class="mb-2">
+          <label for="earnings">Thu nhập/năm (Đơn vị Triệu đồng):</label>
+          <input type="number" id="earnings" name="earnings" value="" />
+        </div>
+        <div class="mb-2">
+          <label for="so_nguoi_phu_thuoc">Số người phụ thuộc</label>
+            <select name="so_nguoi_phu_thuoc" id="so_nguoi_phu_thuoc">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+        </div>
+        <div class="mb-2 text-center">
+          <button class="btn bg-primary" type="submit" onclick="calculate(); return false;">Tính toán</button>
+          <button class="btn bg-dark" type="reset">Clear</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <img src="../images/bang-thue-tncn.jpg" alt="Bảng thuế TNCN">
+    </div>
+    <script>
+      function calculate() {
+        let earnings = parseFloat(document.getElementById("earnings").value);
+        if (earnings <= 0) {
+          alert("Số tiền không đúng. Vui lòng nhập lại!");
+          document.getElementById("earnings").value = '';
+          document.getElementById("earnings").focus();
+          return false;
+        } else {
+          alert("Công cụ này đang hoàn thiện");
+        }
+      }
+    </script>
+  </body>
+</html>

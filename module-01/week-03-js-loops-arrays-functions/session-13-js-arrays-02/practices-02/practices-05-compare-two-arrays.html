@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practive 05: Compare two arrays</title>
+</head>
+
+<body>
+  <script>
+    let numbersOne = [], numbersTwo = [];
+    for (let i = 0; i < 3; i++) {
+      let num = parseFloat(prompt("Enter a number of numbersOne " + (i+1)));
+      if (isNaN(num)) {
+        if (!Number.isInteger(num)) {
+          alert("Please re-enter a number of numbersOne " + (i+1));
+          i--;
+        }
+      }
+      numbersOne.push(num);
+    }
+    for (let i = 0; i < 3; i++) {
+      let num = parseFloat(prompt("Enter a number of numbersTwo " + (i+1)));
+      if (isNaN(num)) {
+        if (!Number.isInteger(num)) {
+          alert("Please re-enter a number of numbersTwo " + (i+1));
+          i--;
+        }
+      }
+      numbersTwo.push(num);
+    }
+    document.write("Mang 1: " + numbersOne);
+    document.write("<br>Mang 2: " + numbersTwo);
+    if (numbersOne.every(isEqual)) {
+      document.write("<br>2 mang bang nhau");
+    } else {
+      document.write("<br>2 mang khong bang nhau");
+    }
+    function isEqual(value, index) {
+      if (numbersOne.length === numbersTwo.length) {
+        if (value === numbersTwo[index]) {
+          return true;
+        }
+      } else {
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

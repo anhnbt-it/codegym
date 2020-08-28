@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 08: Age Verification Test</title>
+</head>
+<body>
+    <script>
+      let age = parseFloat(prompt("Enter age"));
+      if (isNaN(age)) {
+        alert("Enter age again!");
+      } else {
+        if (age > 0 && age < 120) {
+          alert("Ok chuẩn!");
+        } else {
+          alert("Tuổi bạn nhập vào không đúng!");
+        }
+      }
+    </script>
+</body>
+</html>

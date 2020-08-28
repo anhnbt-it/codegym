@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 10: Công cụ tính hóa đơn tiền điện</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 15px 0;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      tfoot td {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Công cụ tính hóa đơn tiền điện</h1>
+    <form action="">
+      <label for="kwh">Tổng điện năng tiêu thụ (kWh):</label><br />
+      <input type="number" id="kwh" name="kwh" value="" />
+      <button type="submit" onclick="calculate(); return false;">Tính toán</button>
+      <button type="reset">Clear</button>
+    </form>
+    <table>
+      <tbody>
+        <tr>
+          <th>&nbsp;</th>
+          <th>ĐƠN GIÁ THEO QĐ 648/QĐ-BCT (đồng/kWh)</th>
+          <th>SẢN LƯỢNG (kWh)</th>
+          <th>THÀNH TIỀN (đồng)</th>
+        </tr>
+        <tr>
+          <td>Bậc thang 1</td>
+          <td>1.510</td>
+          <td id="qty-1">50</td>
+          <td id="sum-1" style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Bậc thang 2</td>
+          <td>1.561</td>
+          <td id="qty-2">50</td>
+          <td id="sum-2" style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Bậc thang 3</td>
+          <td>1.813</td>
+          <td id="qty-3">100</td>
+          <td id="sum-3" style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Bậc thang 4</td>
+          <td>2.282</td>
+          <td id="qty-4">100</td>
+          <td id="sum-4" style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Bậc thang 5</td>
+          <td>2.834</td>
+          <td id="qty-5">100</td>
+          <td id="sum-5" style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>Bậc thang 6</td>
+          <td>2.927</td>
+          <td id="qty-6">0</td>
+          <td id="sum-6" style="text-align: right;">&nbsp;</td>
+        </tr>
+      </tbody>
+      <tfoot id="result"></tfoot>
+    </table>
+    <script>
+      function calculate() {
+        let kwh = parseFloat(document.getElementById("kwh").value);
+        if (kwh <= 0) {
+          alert("Số điện không đúng. Vui lòng nhập lại!");
+          document.getElementById("kwh").focus();
+          return false;
+        }
+        let unit = [1];
+        let qty = 0;
+        let sum = 0;
+        let total = 0;
+        const UNIT_1 = 1.678; // Bậc 1: Cho kWh từ 0 - 50
+        const UNIT_2 = 1.734; // Bậc 2: Cho kWh từ 51 - 100
+        const UNIT_3 = 2.014; // Bậc 3: Cho kWh từ 101 - 200
+        const UNIT_4 = 2.536; // Bậc 4: Cho kWh từ 201 - 300
+        const UNIT_5 = 2.834; // Bậc 5: Cho kWh từ 301 - 400
+        const UNIT_6 = 2.927; // Bậc 6: Cho kWh từ 401 trở lên
+        if (kwh <= 50) {
+          unit = [1];
+          qty = [kwh];
+          sum = [kwh * UNIT_1];
+        } else if (kwh <= 100) {
+          unit = [1, 2];
+          qty = [50, (kwh - 50)];
+          sum = [(50 * UNIT_1), ((kwh - 50) * UNIT_2)];
+        } else if (kwh <= 200) {
+          unit = [1, 2, 3];
+          qty = [50, 50, (kwh - 100)];
+          sum = [(50 * UNIT_1), (50 * UNIT_2), ((kwh - 100) * UNIT_3)];
+        } else if (kwh <= 300) {
+          unit = [1, 2, 3, 4];
+          qty = [50, 50, 100, (kwh - 200)];
+          sum = [(50 * UNIT_1), (50 * UNIT_2), (100 * UNIT_3), ((kwh - 200) * UNIT_4)];
+        } else if (kwh <= 400) {
+          unit = [1, 2, 3, 4, 5];
+          qty = [50, 50, 100, 100, (kwh - 300)];
+          sum = [(50 * UNIT_1), (50 * UNIT_2), (100 * UNIT_3), (100 * UNIT_4), ((kwh - 300) * UNIT_5)];
+        } else {
+          unit = [1, 2, 3, 4, 5, 6];
+          qty = [50, 50, 100, 100, 100, (kwh - 400)];
+          sum = [(50 * UNIT_1), (50 * UNIT_2), (100 * UNIT_3), (100 * UNIT_4), (100 * UNIT_5), ((kwh - 400) * UNIT_6)];
+        }
+        for (let i = 0; i < unit.length; i++) {
+          document.getElementById("qty-" + unit[i]).innerText = Number(qty[i]);
+          document.getElementById("sum-" + unit[i]).innerText = Number(sum[i]).toFixed(3);
+          total += Number(sum[i]); 
+        }
+        
+        document.getElementById("result").innerHTML = "<tr><td colspan=\"4\">Thành tiền chưa VAT: <strong>" + total.toFixed(3) + "đ</strong></td></tr>";
+        document.getElementById("result").innerHTML += "<tr><td colspan=\"4\">VAT 10%: <strong>" + (total * 0.1).toFixed(3) + "đ</strong></td></tr>";
+        document.getElementById("result").innerHTML += "<tr><td colspan=\"4\">Tổng tiền điện phải thanh toán: <strong>" + (total + total * 0.1).toFixed(3) + "đ</strong></td></tr>";
+      }
+    </script>
+  </body>
+</html>

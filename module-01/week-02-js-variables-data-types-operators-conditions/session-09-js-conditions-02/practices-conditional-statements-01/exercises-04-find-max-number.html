@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 04: Find max number</title>
+</head>
+<body>
+  <script>
+    let number_1 = parseFloat(prompt("Enter number 1"));
+    let number_2 = parseFloat(prompt("Enter number 2"));
+    let number_3 = parseFloat(prompt("Enter number 3"));
+
+    if (Number.isInteger(number_1) && Number.isInteger(number_2) && Number.isInteger(number_3)) {
+      let max = number_1;
+      if (max < number_2) {
+        max = number_2;
+      }
+      if (max < number_3) {
+        max = number_3;
+      }
+      document.write("Max number = " + max);
+    } else {
+      document.write("Not a number");
+    }
+  </script>
+</body>
+</html>

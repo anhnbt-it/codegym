@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 09: Solving a Triangle</title>
+</head>
+<body>
+    <script>
+      let a = parseFloat(prompt("Enter length side a (units)"));
+      let b = parseFloat(prompt("Enter length side b (units)"));
+      let c = parseFloat(prompt("Enter length side c (units)"));
+      if (isNaN(a) || isNaN(b)) {
+        alert("Give exactly 3 pieces of information");
+      } else {
+        if ((a > 0 && b > 0 && c > 0) && ((a + b) > c) && ((b + c) > a) && ((a + c) > b)) {
+          alert("Đây là hình tam giác");
+        } else {
+          alert("3 cạnh a, b, c không phải là cạnh của một tam giác");
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Chuyển đổi tiền tệ</legend>
+        <label for="amount">Amount</label><br />
+        <input
+          type="text"
+          name="amount"
+          id="amount"
+          placeholder="Nhập số tiền"
+          required
+        /><br />
+        <label for="fromCurrency">From Currency</label><br />
+        <select name="fromCurrency" id="fromCurrency">
+          <option value="1">VietNam</option>
+          <option value="23000">USD</option> </select
+        ><br />
+        <label for="toCurrency">To Currency</label><br />
+        <select name="toCurrency" id="toCurrency">
+          <option value="23000">USD</option>
+          <option value="1">VietNam</option> </select
+        ><br />
+        <button type="button" onclick="convert();">Convert</button>
+        <div id="result" style="color: blue;"></div>
+      </fieldset>
+    </form>
+    <script>
+      debugger;
+
+      function calculator(amount, fromCurrency, toCurrency) {
+        let result =
+          (parseInt(amount.value) * parseInt(fromCurrency.value)) /
+          parseInt(toCurrency.value);
+        return "Result: $" + Math.round(result);
+      }
+
+      function convert() {
+        let amount = document.getElementById("amount");
+        let fromCurrency = document.getElementById("fromCurrency");
+        let toCurrency = document.getElementById("toCurrency");
+
+        if (amount.value !== "") {
+          //Kiểm tra xem amount có được nhập vào hay không
+          document.getElementById("result").innerHTML = calculator(
+            amount,
+            fromCurrency,
+            toCurrency
+          ); //Thông báo ra kết quả
+        } else {
+          alert("Vui lòng nhập số tiền");
+          amount.focus(); //Sau khi thông báo thì bảo trình duyệt cho nhập vào trường Amount
+        }
+      }
+    </script>
+  </body>
+</html>

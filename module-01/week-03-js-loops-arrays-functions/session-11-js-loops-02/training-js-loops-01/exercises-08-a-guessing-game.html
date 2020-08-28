@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 08: A guessing game</title>
+</head>
+<body>
+  <button id="btnPlay" onclick="playGame(this);">Play game!</button>
+  <script>
+    function playGame(button) {
+      let maxNumber = parseFloat(prompt("Bạn muốn đoán số trong khoảng nào? từ 0 đến mấy?"));
+      let random = Math.floor(Math.random() * maxNumber);
+      let guess = parseFloat(prompt("Hãy nhập vào số bạn dự đoán"));
+      if (isNaN(maxNumber) || isNaN(guess) || maxNumber < 0 || guess < 0) {
+        alert("Vui lòng nhập lại số nguyên dương > 0");
+        guess = parseFloat(prompt("Hãy nhập vào số bạn dự đoán"));
+      }
+      for (let i = 0, j = 2; i < 3; i++, j--) {
+        if (i === 2) {
+          alert("Dự đoán sai. Đã hết lượt!");
+        } else {
+          if (guess < random) {
+            alert("Dự đoán sai. Bạn còn " + j + " lần dự đoán lại");
+            guess = parseFloat(prompt("Hãy nhập vào số bạn dự đoán"));
+          } else if (guess > random) {
+            alert("Dự đoán sai. Bạn còn " + j + " lần dự đoán lại");
+            guess = parseFloat(prompt("Hãy nhập vào số bạn dự đoán"));
+          } else {
+            alert("Dự đoán đúng!\nSố may mắn từ 0 - " + maxNumber + " là: " + random);
+            break;
+          }
+        }
+      }
+      button.textContent = "Play again!";
+    }
+  </script>
+</body>
+</html>

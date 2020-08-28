@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 02: Feet to meter</title>
+  <style>
+    .mb-2 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="" method="POST">
+    <div class="mb-2">
+      <label for="feet">Feet</label>
+      <input type="number" id="feet">
+    </div>
+    <div class="mb-2">
+      <label for="meter">Meter</label>
+      <input type="number" id="meter">
+    </div>
+    <div class="mb-2">
+      <button type="submit" onclick="convert(); return false;">Convert</button>
+    </div>
+  </form>
+  <div id="output"></div>
+  <script>
+    function convert() {
+      let feet = document.getElementById("feet");
+      let meter = document.getElementById("meter");
+
+      if (!isNaN(feet.value) && feet.value != '') {
+        document.getElementById("meter").value = feetToMeter(feet.value).toFixed(3);
+      } else if (!isNaN(meter.value) && meter.value != '') {
+        document.getElementById("feet").value = meterToFeet(meter.value).toFixed(3);
+      } else {
+        document.getElementById("output").innerHTML = "Please enter a number!";
+      }
+    }
+    function feetToMeter(value) {
+      let meter = parseFloat(value);
+      if (!isNaN(meter)) {
+        return 0.305 * meter;
+      }
+      return false;
+    }
+    function meterToFeet(value) {
+      let feet = parseFloat(value);
+      if (!isNaN(feet)) {
+        return 3.279 * feet;
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

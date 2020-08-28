@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 01: Greater than or equal to 10</title>
+</head>
+<body>
+  <p>Click the button to get every element in the array that has a value of 10 or more.</p>
+  <button onclick="getValue()">Try it</button>
+  <p id="output"></p>
+  <script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+      let num = parseInt(prompt("Enter a number"));
+      if (isNaN(num)) {
+        alert("Please enter a number");
+      } else {
+        numbers[i] = num;
+      }
+    }
+    function biggerElements(value) {
+      return value >= 10;
+    }
+    function getValue() {
+      document.getElementById("output").innerHTML = "Các số bạn đã nhập " + numbers.toString() + " có các phần tử lớn hơn hoặc bằng 10 lần lượt là: " + numbers.filter(biggerElements);
+    }
+  </script>
+</body>
+</html>

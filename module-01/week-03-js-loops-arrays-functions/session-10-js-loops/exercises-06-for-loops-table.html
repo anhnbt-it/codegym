@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 06: For Loops Table</title>
+  <style>
+    table {
+      width: 50%;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 3px solid #ddd;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .text-danger {
+      color: red;
+    }
+
+    .text-primary {
+      color: blue;
+    }
+
+    .font-weight-bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <table>
+  <script>
+    let table = '<table>';
+    let i = 1;
+    let j = 2;
+    while (i <= 10) {
+      table += '<tr>';
+      table += '<td>' + i + '</td>';
+      while (j <= 10) {
+        if ((i * j) % 2 === 0) {
+          if ((i * j) % 10 === 0) {
+            table += '<td><span class="text-danger font-weight-bold">' + i*j + '</span></td>';
+          } else {
+            table += '<td><span class="text-danger">' + i*j + '</span></td>';
+          }
+        } else {
+          table += '<td><span class="text-primary">' + i*j + '</span></td>';
+        }
+        j++;
+      }
+      table += '</tr>';
+      j = 2;
+      i++;
+    }
+    table += '</table>';
+    document.write(table);
+  </script>
+</body>
+</html>

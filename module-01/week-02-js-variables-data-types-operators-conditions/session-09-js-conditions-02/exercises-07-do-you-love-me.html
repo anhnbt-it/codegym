@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 07: Do You Love Me?</title>
+  <style>
+    body {
+      background-color: yellow;
+    }
+    .wrap {
+      position: relative;
+      text-align: center;
+      width: 600px;
+      height: 600px;
+      background-color: white;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Do You Love Me?</h1>
+    <button onclick="alert('<3');">Yes</button>
+    <button id="btnNo">No</button>
+  </div>
+  <script>
+    let btnNo = document.getElementById("btnNo");
+    btnNo.addEventListener("mouseover", function() {
+      let posX = Math.round(Math.random() * (window.innerWidth - 100 - btnNo.offsetWidth));
+      let posY = Math.round(Math.random() * (window.innerHeight - 100 - btnNo.offsetHeight));
+      btnNo.style.position = "absolute";
+      btnNo.style.left = posX + 'px';
+      btnNo.style.top = posY + 'px';
+    })
+  </script>
+</body>
+</html>

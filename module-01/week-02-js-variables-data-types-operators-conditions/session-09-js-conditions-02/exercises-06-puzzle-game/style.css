@@ -1,0 +1,27 @@
+#puzzle-game-wrap {
+  padding: 5px;
+  width: 600px;
+  border: 10px solid transparent;
+}
+img {
+  display: block;
+  cursor: pointer;
+  margin-top: 4px;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: auto;
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 4px 10px 6px #000000;
+}
+@-webkit-keyframes blink { 
+  50% { border-color: #ff0000; } 
+}
+@keyframes blink { 
+  50% { border-color: #ff0000; } 
+}
+
+.blink-red-color {
+  animation: blink .5s step-end infinite alternate;
+  -webkit-animation: blink .5s step-end infinite alternate;
+}

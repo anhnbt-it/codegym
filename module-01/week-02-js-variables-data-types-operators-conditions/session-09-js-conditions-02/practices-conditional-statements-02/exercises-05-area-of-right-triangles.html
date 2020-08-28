@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 05: Area of right triangles</title>
+  <style>
+    .mb-2 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="" method="POST">
+    <div class="mb-2">
+      <label for="sideLengthA">Enter side length a (meters)</label>
+      <input type="number" id="sideLengthA">
+    </div>
+    <div class="mb-2">
+      <label for="sideLengthB">Enter side length b (meters)</label>
+      <input type="number" id="sideLengthB">
+    </div>
+    <div class="mb-2">
+      <input type="submit" value="Calculate" onclick="calc(); return false;">
+      <input type="reset">
+    </div>
+  </form>
+  <p id="result">Area A = ? m<sup>2</sup></p>
+  <script>
+    // Area of a Right Triangle = A = ½ × Base × Height(Perpendicular distance)
+    function getAreaOfRightTriangles(a, b) {
+      return a * b / 2;
+    }
+    function calc() {
+      let a = parseFloat(document.getElementById("sideLengthA").value);
+      let b = parseFloat(document.getElementById("sideLengthB").value);
+      if (isNaN(a) || isNaN(b)) {
+        alert("Enter length side a, b again!");
+        return false;
+      } else {
+        document.getElementById("result").innerHTML = "Area A = " + getAreaOfRightTriangles(a, b) + " m<sup>2</sup>";
+      }
+    }
+  </script>
+</body>
+</html>

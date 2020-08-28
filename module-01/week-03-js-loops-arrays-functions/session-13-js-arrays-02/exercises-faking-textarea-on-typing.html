@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faking Textarea on Typing</title>
+</head>
+<body style="text-align: center;">
+  <h1>Type anthing slowly</h1>
+  <form action="" id="myForm" name="myForm">
+    <textarea name="text" id="myTextarea" name="myTextarea" cols="60" rows="10" placeholder="Enter some text"></textarea>
+  </form>
+  <script>
+    let key = document.getElementById("myTextarea");
+    let fakeTextArr = ["T", "Ô", "I", " ", "L", "À", " ", "M", "Ộ", "T", " ", "Đ", "Ứ", "A", " ", "N", "G", "Ố", "C", "!", "!"];
+    let text = "";
+    key.addEventListener("keyup", function(evt) {
+      if (evt.isComposing || evt.keyCode === 229) {
+        return;
+      }
+      for (let i = 0; i < this.value.length; i++) {
+        if (i > 20) {
+          text = "";
+        } else {
+          text += fakeTextArr[i];
+        }
+      }
+      this.value = text;
+      text = "";
+    });
+  </script>
+</body>
+</html>

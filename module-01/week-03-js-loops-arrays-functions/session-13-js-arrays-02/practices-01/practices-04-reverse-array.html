@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 04: Reverse array</title>
+</head>
+<body>
+  <button type="button" onclick="reverseNumber();">Reverse Array</button>
+  <script>
+    let numbers = [];
+    let max = 0;
+    for (let i = 0; i < 5; i++) {
+      let num = parseInt(prompt("Enter a number of " + i));
+      if (isNaN(num)) {
+        alert("Vui lòng nhập lại một số nguyên");
+        location.reload();
+        break;
+      } else {
+        numbers[i] = num;
+      }
+    }
+    document.write("Mảng bạn đã nhập " + numbers.toString());
+    function reverseNumber() {
+      numbers.reverse();
+      alert("Mảng sau khi đảo ngược phần tử " + numbers.toString());
+    }
+  </script>
+</body>
+</html>
