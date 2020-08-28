@@ -105,3 +105,4 @@ dist
 bao-cao/
 nop-hoc-phi/
 thoi-khoa-bieu/
+*.code-workspace
