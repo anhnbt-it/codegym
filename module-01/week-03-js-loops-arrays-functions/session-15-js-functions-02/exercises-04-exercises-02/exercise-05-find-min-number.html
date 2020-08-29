@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 05: Find min number</title>
+</head>
+<body>
+  <script>
+    function findMinNumber(n1, n2, n3) {
+      let min = n1;
+      if (min > n2) {
+        min = n2;
+      }
+      if (min > n3) {
+        min = n3;
+      }
+      return min;
+    }
+    let n1 = parseFloat(prompt("Enter a number"));
+    let n2 = parseFloat(prompt("Enter a number"));
+    let n3 = parseFloat(prompt("Enter a number"));
+    if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+      console.log("Not a number! Please re-enter a number");
+    } else {
+      console.log("Min number is: " + findMinNumber(n1, n2, n3));
+    }
+  </script>
+</body>
+</html>
