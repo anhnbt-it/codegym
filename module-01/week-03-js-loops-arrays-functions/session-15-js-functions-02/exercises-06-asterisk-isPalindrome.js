@@ -1,15 +1,14 @@
 function isPalindrome(str) {
-  str = str.toLowerCase();
-  let removeSpace = '', res = '';
+  str = str.split(' ').join('').toLowerCase();
+  let result = '';
   if (str.length > 2) {
     if (str.charAt(0) !== str.charAt(str.length-1)) {
       return false;
     } else {
-      removeSpace = str.split(' ').join('');
-      res = removeSpace.substr(1, removeSpace.length-2);
-      return isPalindrome(res);
+      result = str.substr(1, str.length-2);
+      return isPalindrome(result);
     }
   }
   return true;
 }
-console.log(isPalindrome("Was it a car or a cat I saw"));
+console.log(isPalindrome("kaka"));
