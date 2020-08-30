@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practices 01: Flash</title>
+</head>
+<body>
+  
+  <script src="battery.js"></script>
+  <script src="flashlamp.js"></script>
+  <script>
+    let battery = new Battery();
+    battery.setEnergy(10);
+    let flashlamp = new Flashlamp();
+    flashlamp.setBattery(battery);
+
+    console.log("Battery Info: ", flashlamp.getBatteryInfo());
+    flashlamp.light();
+    
+    console.log("Turn On");
+    flashlamp.turnOn();
+    flashlamp.light();
+    console.log("Battery Info: ", flashlamp.getBatteryInfo());
+    
+    console.log("Turn Off");
+    flashlamp.turnOff();
+    flashlamp.light();
+  </script>
+</body>
+</html>
