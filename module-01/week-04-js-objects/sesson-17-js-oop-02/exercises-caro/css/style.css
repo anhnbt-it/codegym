@@ -18,10 +18,13 @@ h1 {
   text-align: center;
 }
 
-.cols {
-  border: 1px solid #0da192;
-  display: inline;
-  text-align: center;
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+td {
+  border: 3px solid #0da192;
   font-size: 20pt;
   cursor: pointer;
   transition-duration: 0.125s;
@@ -31,7 +34,7 @@ h1 {
 
 .btn {
   font-size: 15px;
-  padding: 12px 20px;
+  padding: 8px 20px;
   margin: 14px 0 8px 0;
   text-align: center;
   border-radius: 4px;
@@ -39,6 +42,7 @@ h1 {
   border: 2px solid transparent;
   outline: 1px solid transparent;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .bg-primary {

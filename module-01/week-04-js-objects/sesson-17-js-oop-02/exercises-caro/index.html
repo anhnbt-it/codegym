@@ -5,19 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exercises Caro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="startGame();">
+<body>
   <div class="wrap">
     <h1 class="text-center">Caro</h1>
     <p class="text-center" id="output"><span class="font-weight-bold">X</span> Turn</p>
     <div id="myGameArea" class="mb-2 text-center"></div>
     <div class="text-center">
-      <a href="" class="btn bg-primary" role="button">Start</a>
+      <button class="btn bg-primary" id="startBtn">Start</button>
     </div>
   </div>
-  <script src="app.js"></script>
+  <script src="src/caro.js"></script>
+  <script src="src/app.js"></script>
 </body>
 
 </html>
