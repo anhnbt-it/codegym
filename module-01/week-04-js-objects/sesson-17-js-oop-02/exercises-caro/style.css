@@ -18,23 +18,15 @@ h1 {
   text-align: center;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 4px solid #0da192;
-  line-height: 40px;
+.cols {
+  border: 1px solid #0da192;
+  display: inline;
   text-align: center;
-  font-size: 38px;
+  font-size: 20pt;
   cursor: pointer;
   transition-duration: 0.125s;
   -webkit-transition-duration: 0.125s;
-  height: 40px;
-  width: 40px;
-  padding: 0px 4px;
+  padding: 0px 8px;
 }
 
 .btn {
