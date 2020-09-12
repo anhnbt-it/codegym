@@ -102,6 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+algorithms-hackerrank/
 bao-cao/
 nop-hoc-phi/
 thoi-khoa-bieu/
