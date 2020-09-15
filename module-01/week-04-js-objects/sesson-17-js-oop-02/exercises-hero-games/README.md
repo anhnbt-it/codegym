@@ -1,6 +1,6 @@
 # [Bài tập] Game đơn giản - di chuyển đối tượng
 
-Chạy thử: >>[Hero Games](https://anhnbt-it.github.io/codegym-v2/module-01/week-04-js-objects/sesson-17-js-oop-02/exercises-hero-games/index.html)
+Chạy thử: >>[Hero Games](https://anhnbt-it.github.io/codegym/module-01/week-04-js-objects/sesson-17-js-oop-02/exercises-hero-games/index.html)
 
 ## Mục tiêu
 Luyện tập định nghĩa lớp, khởi tạo đối tượng và sử dụng các phương thức của đối tượng.
