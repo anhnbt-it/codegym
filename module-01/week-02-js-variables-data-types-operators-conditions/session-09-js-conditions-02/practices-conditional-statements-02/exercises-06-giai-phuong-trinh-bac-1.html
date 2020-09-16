@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 06: Giải phương trình bậc 1</title>
+    <title>Exercises 06: Giải phương trình bậc 1</title>
   </head>
   <body>
     <div id="result"></div>
@@ -11,18 +11,17 @@
       // Phương trình có dạng ax + b = 0, với a và b là hai số đã cho và a ≠ 0, được gọi là phương trình bậc nhất một ẩn.
       let a = parseInt(prompt("Nhập số a"));
       let b = parseInt(prompt("Nhập số b"));
-      let x = 0;
       if (isNaN(a) || isNaN(b)) {
-        document.getElementById("result").innerHTML = "Số nhập vào phải là số nguyên. Vui lòng nhập lại";
+        document.getElementById("result").innerHTML = "Vui lòng nhập vào một số nguyên";
       } else {
         if (a !== 0) {
-          x = -(b)/a;
+          let x = -(b / a);
           document.getElementById("result").innerHTML = "Phương trình có tập nghiệm là S = {-" + b + "/" + a + " = " + x + "}";
         } else {
           if (b === 0) {
-            document.getElementById("result").innerHTML = "0x = 0 => Phương trình có vô số nghiệm";
+            document.getElementById("result").innerHTML = a + "x = 0 => Phương trình có vô số nghiệm";
           } else {
-            document.getElementById("result").innerHTML = "0x = " + b + " (b ≠ 0) Phương trình vô nghiệm";
+            document.getElementById("result").innerHTML = a + "x = " + b + " (b ≠ 0) Phương trình vô nghiệm";
           }
         }
       }

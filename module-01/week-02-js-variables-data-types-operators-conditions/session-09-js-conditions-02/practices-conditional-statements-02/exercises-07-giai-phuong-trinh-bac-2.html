@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 07: Giải phương trình bậc 2</title>
+    <title>Exercises 07: Giải phương trình bậc 2</title>
   </head>
   <body>
     <div id="result"></div>
@@ -13,26 +13,23 @@
       let c = parseInt(prompt("Nhập số c"));
       let x = 0, x1 = 0, x2 = 0;
       if (isNaN(a) || isNaN(b) || isNaN(c)) {
-        document.getElementById("result").innerHTML = "Vui lòng nhập lại số a, b, c";
+        document.getElementById("result").innerHTML = "Vui lòng nhập vào một số nguyên";
       } else {
-        if (a !== 0) {
-          // Các trường hợp đặc biệt
-          if (a + b + c === 0) {
-            // Với a, b, c là các hệ số của phương trình bậc 2, a ≠ 0
+        if (a !== 0) { // Các trường hợp đặc biệt
+          if (a + b + c === 0) { // Với a, b, c là các hệ số của phương trình bậc 2, a ≠ 0
             x1 = 1;
             x2 = c / a;
-            document.getElementById("result").innerHTML = "Vì a + b + c = 0 => Nghiệm của phương trình là:<br>x<sub>1</sub>= " + x1 + "<br>x<sub>2</sub>= " + x2;
+            document.getElementById("result").innerHTML = "Vì a + b + c = 0 => Nghiệm của phương trình là: <br>x<sub>1</sub>= " + x1 + "<br>x<sub>2</sub>= " + x2;
           } else if (a - b + c === 0) {
-            // Với a, b, c là các hệ số của phương trình bậc 2, a ≠ 0
             x1 = -1;
             x2 = -(c / a);
             document.getElementById("result").innerHTML = "Vì a - b + c = 0 => Nghiệm của phương trình là: <br>x<sub>1</sub>= " + x1 + "<br>x<sub>2</sub>= " + x2;
           } else if (a * c < 0) {
-            document.write("Phương trình luôn có 2 nghiệm phân biệt");
+            document.getElementById("result").innerHTML = "Phương trình luôn có 2 nghiệm phân biệt";
           } else {
-            let delta = b ** 2 - 4 * a * c; // delta = Δ
+            let delta = Math.pow(b, 2) - (4 * a * c); // delta = Δ
             if (delta < 0) {
-              document.write("Vì Δ = " + delta + " < 0 => Phương trình vô nghiệm");
+              document.getElementById("result").innerHTML = "Vì Δ = " + delta + " < 0 => Phương trình vô nghiệm";
             } else if (delta == 0) {
               x = -(b / (2 * a));
               document.getElementById("result").innerHTML = "Vì Δ = " + delta + " => Phương trình có nghiệm kép: x<sub>1</sub> = x<sub>2</sub> = " + x;
@@ -44,7 +41,7 @@
           }
         } else {
           if (b !== 0) {
-            x = -(c)/b;
+            x = -c / b;
             document.getElementById("result").innerHTML = "Phương trình có tập nghiệm là S = {-" + c + "/" + b + " = " + x + "}";
           } else {
             if (c === 0) {

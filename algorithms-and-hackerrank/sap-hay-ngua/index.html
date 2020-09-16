@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sấp hay Ngửa?</title>
+	<style>
+		.wrapper {
+			width: 600px;
+			margin: 40px auto;
+			text-align: center;
+		}
+
+		img {
+			display: block;
+			width: 80%;
+			margin: 10px auto;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		td {
+			border: 1px solid black;
+			padding: 6px;
+		}
+
+		.bg-yellow {
+			background-color: yellow;
+			color: red;
+			padding: 6px;
+			font-weight: bold;
+		}
+
+		.bg-white {
+			background-color: white;
+			color: black;
+			padding: 6px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<button onclick="tungDongXu(this); return false;">Tung đồng xu ngay</button>
+		<img src="sap-hay-ngua.jpeg" alt="Sấp hay Ngửa?" width="120">
+		<div id="output"></div><!-- Dùng để in ra kết quả -->
+	</div>
+	<script>
+		function tungDongXu(button) {
+			button.innerText = "Tung lại đồng xu"; // Thay văn bản khác khi button được nhấn vào
+
+			// Random ngẫu nhiên số 0 hoặc 1
+			let randXuAn = Math.round(Math.random() * 1);
+			let randXuBinh = Math.round(Math.random() * 1);
+			let randXuCuong = Math.round(Math.random() * 1);
+			
+			// In ra console.log trạng thái đồng xu của mỗi người
+			console.log("Trạng thái xu của An: " + randXuAn + "=" + ((randXuAn === 1) ? "Ngửa" : "Sấp")); // Dùng toán tử 3 ngôi để kiểm tra nếu số ngẫu nhiên là 1 thì in ra Ngửa, 0 thì in ra Sấp
+			console.log("Trạng thái xu của Bình: " + randXuBinh + "=" + ((randXuBinh === 1) ? "Ngửa" : "Sấp"));
+			console.log("Trạng thái xu của Cường: " + randXuCuong + "=" + ((randXuCuong === 1) ? "Ngửa" : "Sấp"));
+	
+			let tbl = "<table>"; // Dùng biến tbl để tạo một bảng
+			if ((randXuAn === randXuBinh) && (randXuBinh === randXuCuong)) { // Nếu cả 3 người bằng nhau
+				tbl += "<caption class=\"bg-yellow\">Hòa nhau</caption>"; // Chèn thêm thẻ caption với nội dung Hòa nhau vào bảng
+			} else if ((randXuCuong !== randXuAn) && (randXuAn === randXuBinh)) { // Nếu Cường khác 2 người còn lại
+				tbl += "<caption class=\"bg-yellow\">Cường thắng</caption>";
+			} else if ((randXuBinh !== randXuAn) && (randXuAn === randXuCuong)) { // Nếu Bình khác 2 người còn lại
+				tbl += "<caption class=\"bg-yellow\">Bình thắng</caption>";
+			} else { // Nếu các điều kiện trên sai thì người còn lại thắng
+				tbl += "<caption class=\"bg-yellow\">An thắng</caption>";
+			}
+
+			tbl += "<tr>"; // Chèn thêm thẻ tr (hàng) vào bảng
+			
+			// Chèn thẻ td (cột) với tên và ảnh Sấp hoặc Ngửa (Dùng toán tử 3 ngôi để kiểm tra như dòng 63)
+			tbl += '<td' + ((randXuAn === 1) ? " class=\"bg-yellow\"" : " class=\"bg-white\"") + '><span>An</span><img src="' + ((randXuAn === 1) ? "mat-duong" : "mat-am") + '.jpg" alt="' + ((randXuAn === 1) ? "mat-duong" : "mat-am") + '" width="120"></td>';
+			tbl += '<td' + ((randXuBinh === 1) ? " class=\"bg-yellow\"" : " class=\"bg-white\"") + '><span>Bình</span><img src="' + ((randXuBinh === 1) ? "mat-duong" : "mat-am") + '.jpg" alt="' + ((randXuBinh === 1) ? "mat-duong" : "mat-am") + '" width="120"></td>';
+			tbl += '<td' + ((randXuCuong === 1) ? " class=\"bg-yellow\"" : " class=\"bg-white\"") + '><span>Cường</span><img src="' + ((randXuCuong === 1) ? "mat-duong" : "mat-am") + '.jpg" alt="' + ((randXuCuong === 1) ? "mat-duong" : "mat-am") + '" width="120"></td>';
+			tbl += "</tr>"; // Đóng thẻ tr
+
+			tbl += "</table>"; // Đóng bảng
+			document.getElementById('output').innerHTML = tbl; // In ra bảng vào trong thẻ có id = output
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ước chung lớn nhất</title>
+</head>
+
+<body>
+  Hello
+  <script>
+    /*
+    * (ƯCLN) của hai số nguyên (greatest common divisor (gcd))
+    * Là số lớn nhất có thể chia được bởi hai số nguyên đó với số dư bằng không
+    */
+
+    function uocChungLonNhat(number) {
+      if (number < 1) {
+        return false;
+      }
+      let result = [];
+      for (let i = 1; i <= number; i++) {
+        if (number % i === 0) {
+          result.push(i);
+        }
+      }
+      return result;
+    }
+    let ucln_45 = uocChungLonNhat(16);
+    console.log(ucln_45);
+  </script>
+</body>
+
+</html>

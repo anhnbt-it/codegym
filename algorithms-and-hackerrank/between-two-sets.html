@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Between Two Sets</title>
+</head>
+
+<body>
+  <script>
+    function getTotalX(a, b) {
+      let validCount = 0;
+
+      for (let x = 1; x <= 100; x++) {
+        if (a.every(int => (x % int == 0))) {
+          if (b.every(int => (int % x == 0))) {
+            validCount++;
+          }
+        }
+      }
+
+      return validCount;
+    }
+
+    let a = [2, 4];
+    let b = [16, 32, 96]; 
+    let res = getTotalX(a, b);
+    console.log(res);
+
+  </script>
+</body>
+
+</html>
