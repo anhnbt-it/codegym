@@ -1,5 +1,5 @@
-function isPrime(number) {
-  if (number === 1) {
+function isPrime(number) { // isPrime(3)
+  if (number <= 1) {
     return false;
   } else if (number === 2) {
     return true;
@@ -12,4 +12,3 @@ function isPrime(number) {
     return true;
   }
 }
-console.log(isPrime(3));

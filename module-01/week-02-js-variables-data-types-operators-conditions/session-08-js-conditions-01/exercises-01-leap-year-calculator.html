@@ -13,10 +13,6 @@
   <script>
     let year = parseInt(prompt("Enter a year"));
     let isLeap = ((year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0));
-
-    // if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-    //   alert(year + " is a leap year");
-    // }
     if (isLeap) {
       alert(year + " is a leap year");
     } else {
