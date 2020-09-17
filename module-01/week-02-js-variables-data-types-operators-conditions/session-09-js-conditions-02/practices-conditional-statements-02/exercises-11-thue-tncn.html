@@ -77,7 +77,38 @@
           document.getElementById("earnings").focus();
           return false;
         } else {
+          alert("Công cụ chưa hoàn thiện");
+          let so_nguoi_phu_thuoc = parseInt(document.getElementById('so_nguoi_phu_thuoc'));
           alert("Công cụ này đang hoàn thiện");
+          switch (so_nguoi_phu_thuoc) {
+            case 1:
+              // Tính thuế cho 1 người phụ thuộc
+              break;
+            case 2: 
+              // Tính thuế cho 2 người phụ thuộc
+              break;
+            case 3: 
+              // Tính thuế cho 3 người phụ thuộc
+              break;
+            default:
+              // Tính thuế cho 3 người phụ thuộc
+
+          }
+          const LESS_THAN_5_MILLION = 5000000,
+            LESS_THAN_10_MILLION = 10000000,
+            LESS_THAN_18_MILLION = 18000000,
+            LESS_THAN_32_MILLION = 32000000;
+          if (earnings <= LESS_THAN_5_MILLION) {
+            // Tính thuế cho thu nhập đến 5tr
+          } else if (earnings <= LESS_THAN_10_MILLION) {
+            // Tính thuế cho thu nhập từ 5tr đến 10tr
+          } else if (earnings <= LESS_THAN_18_MILLION) {
+            // Tính thuế cho thu nhập từ 10tr đến 18tr
+          } else if (earnings <= LESS_THAN_32_MILLION) {
+            // Tính thuế cho thu nhập từ 18tr đến 32tr
+          } else {
+            // Tính thuế cho thu nhập từ trên 32tr
+          }
         }
       }
     </script>

@@ -4,33 +4,147 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 04: Number of days in a month</title>
+    <style>
+      *, ::before, ::after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+      }
+
+      html, body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .wrapper {
+        width: 80%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 10px;
+        box-shadow: 0 10px 16px 0 #ddd;
+      }
+
+      input[type=number] {
+        width: 100%;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 3px #ddd;
+        border-radius: 4px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 12px 20px;
+      }
+
+      legend {
+        color: #0000cd;
+      }
+
+      label {
+        color: #a52a2a;
+      }
+      
+      .mb-2 {
+        margin-bottom: 10px;
+      }
+
+      fieldset {
+        border: 1px solid #ccc;
+      }
+
+      #output {
+        display: none;
+        padding: 0.01em 16px;
+        margin-top: 10px;
+        color: #fff;
+        background-color: #ff6347;
+        font-size: large;
+      }
+
+      .btn {
+        background-color: #008CBA; /* Blue */
+        color: white;
+        border: none;
+        padding: 6px 14px;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .btn-block {
+        display: block;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <form action="" method="POST">
-      <input type="number" name="month" id="month" value="1" />
-      <button type="submit" onclick="getNumberOfDaysInAMonth(); return false;">
-        Tính số ngày
-      </button>
+    <form action="" method="POST" class="wrapper">
+      <fieldset>
+        <legend>Ứng dụng tính số ngày trong một tháng</legend>
+        <div class="mb-2">
+          <label for="month">Nhập số tháng (1 - 12): </label>
+          <input type="number" name="month" id="month" value="1" minlength="1" maxlength="12" placeholder="Nhập số tháng từ 1 - 12" /><br>
+        </div>
+
+        <div class="mb-2">
+          <label for="year">Nhập số năm (YYYY): </label>
+          <input type="number" name="year" id="year" placeholder="Ví dụ: 2020" /><br>
+        </div>
+        <div class="mb-2">
+          <button class="btn btn-block" type="submit" onclick="calcDaysInAMonth(); return false;">
+            Tính số ngày
+          </button>
+        </div>
+      </fieldset>
+      <div id="output" class="mb-2"></div>
     </form>
+      
     <script>
-      function getNumberOfDaysInAMonth() {
-        // let date = new Date();
-        // let year = date.getFullYear();
+      window.onload = function() {
+        let year = new Date().getFullYear();
+        document.getElementById("year").value = year;
+      }
+      const JANUARY = 1, FEBRUARY = 2, MARCH = 3, APRIL = 4, MAY = 5,
+        JUNE = 6, JULY = 7, AUGUST = 8, SEPTEMBER = 9, OCTOBER = 10,
+        NOVEMBER = 11, DECEMBER = 12;
+        
+      function isLeapYear(year) {
+        return (year % 4) === 0 && ((year % 100) !== 0 || (year % 400) === 0);
+      }
+        
+      function calcDaysInAMonth() {
         let month = parseInt(document.getElementById("month").value);
-        // return alert(new Date(year, month, 0).getDate());
-        let daysInMonth = 31;
-        switch (month) {
-          case 2:
-            daysInMonth = 29;
-            break;
-          case 4:
-          case 6:
-          case 9:
-          case 11:
-            daysInMonth = 30;
-            break;
+        let year = parseInt(document.getElementById("year").value);
+        let output = document.getElementById("output");
+        output.style.display = "block";
+        output.innerHTML = getNumberOfDaysInAMonth(month, year);
+      }
+      
+      function getNumberOfDaysInAMonth(month, year, msg = "", daysInMonth = 31) {
+        if (isNaN(month) || month <= 0 || month > 12) {
+          msg = "Vui lòng nhập vào số tháng từ 1 - 12!";
+        } else {
+          switch (month) {
+            case FEBRUARY:
+              if (isLeapYear(year)) {
+                daysInMonth = 29;
+              } else {
+                daysInMonth = 28;
+              }
+              break;
+            case APRIL:
+            case JUNE:
+            case SEPTEMBER:
+            case NOVEMBER:
+              daysInMonth = 30;
+              break;
+          }
+          msg = "Tháng " + month + " năm " + year + " có " + daysInMonth + " ngày"
         }
-        alert("Tháng " + month + " có " + daysInMonth + " ngày");
+        return msg;
       }
     </script>
   </body>
