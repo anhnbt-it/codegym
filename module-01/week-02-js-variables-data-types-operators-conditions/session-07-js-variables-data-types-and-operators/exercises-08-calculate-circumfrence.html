@@ -7,14 +7,14 @@
 </head>
 <body>
     <script>
-        function circumference(radius) {
-            // Công thức tính chu vi hình tròn: C = 2π * radius
-            if (Number.isNaN(Number.parseFloat(radius))) {
-                return 0;
+        function circumference(r) {
+            if (isNaN(parseFloat(r))) {
+                return "Not a Number";
             }
-            return 2 * Math.PI * parseFloat(radius);
+            // Công thức tính chu vi hình tròn: C = 2π * radius
+            return 2 * Math.PI * parseFloat(r);
         }
-        let radius = parseInt(prompt("Enter Radius (r)"))
+        let radius = parseFloat(prompt("Enter Radius (r)"))
         document.write("c = " + circumference(radius));
     </script>
 </body>
