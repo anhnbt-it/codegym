@@ -7,16 +7,16 @@
 </head>
 <body>
   <script>
-    let temp = parseFloat(prompt("Enter temperature: "));
-    if (isNaN(temp)) {
+    let temperature = parseFloat(prompt("Enter temperature: "));
+    if (isNaN(temperature)) {
       alert("Please enter temperature again!");
     } else {
-      if (temp > 100) {
+      if (temperature >= 100) {
         alert("Hay giam nhiet do");
-      } else if (temp < 20) {
+      } else if (temperature <= 20) {
         alert("Hay tang nhiet do");
       } else {
-        alert("Nhiet do ban nhap vao la: " + temp);
+        alert("Nhiet do ban nhap vao la: " + temperature);
       }
     }
   </script>

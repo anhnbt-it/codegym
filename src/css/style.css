@@ -18,7 +18,7 @@ html, body {
   box-shadow: 0 10px 16px 0 #ddd;
 }
 
-input[type=number] {
+input[type=number], input[type=text], select {
   width: 100%;
   margin: 8px 0;
   border: 1px solid #ccc;
