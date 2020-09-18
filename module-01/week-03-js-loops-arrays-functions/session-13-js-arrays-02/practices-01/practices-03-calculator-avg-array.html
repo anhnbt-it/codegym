@@ -7,17 +7,27 @@
 </head>
 <body>
   <script>
-    let sum = 0;
     let numbers = [65, 44, 12, 4];
-    let max = numbers[0];
-    numbers.forEach(getSumAndAvg);
-    function getSumAndAvg(value, index) {
-      if (max < numbers[index]) {
-        max = numbers[index];
+    
+    function findMax(arr) {
+      let max = arr[0];
+      for (let value of arr) {
+        if (max < value) {
+          max = value;
+        }
       }
-      sum += value;
+      return max;
     }
-    document.write("Mảng " + numbers.toString() + " có phần tử lớn nhất là: " + max + ". Giá trị trung bình = " + (sum/numbers.length));
+
+    function avgArray(arr) {
+      let sum = 0;
+      for (let value of arr) {
+        sum += value;
+      }
+      return sum / arr.length;
+    }
+
+    document.write("Mảng " + numbers.toString() + " có phần tử lớn nhất là: " + findMax(numbers) + ". Giá trị trung bình = " + avgArray(numbers));
   </script>
 </body>
 </html>
