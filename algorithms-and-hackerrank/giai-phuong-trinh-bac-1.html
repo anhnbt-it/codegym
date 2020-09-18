@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giải phương trình bậc nhất một ẩn</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <form action="">
+        <div id="output"></div>
+          <h3>Giải phương trình bậc nhất một ẩn ax + b = 0</h3>
+          <div class="mb-2">
+            <label for="a">Nhập số a: </label>
+            <input type="number" name="a" id="a" value="5" placeholder="Nhập số a">
+          </div>
+          <div class="mb-2">
+            <label for="b">Nhập số b: </label>
+            <input type="number" name="b" id="b" value="8" placeholder="Nhập số b">
+          </div>
+          <div class="mb-2">
+            <button class="btn btn-primary" type="submit" onclick="calculate(); return false;">Tính kết quả</button>
+            <button class="btn btn-default" type="reset">Reset</button>
+          </div>
+      </form>
+
+    </div>
+    <script>
+      function calculate() {
+        let a = parseFloat(document.getElementById("a").value);
+        let b = parseFloat(document.getElementById("b").value);
+        let output = document.getElementById("output");
+        output.setAttribute("class", "alert alert-danger");
+        output.innerHTML = giaiPhuongTrinhBac1(a, b);
+      }
+      function giaiPhuongTrinhBac1(a, b) {
+        let result = 0;
+        if (isNaN(a) || isNaN(b)) {
+          result = "Vui lòng nhập vào một số nguyên";
+        } else {
+          if (a !== 0) {
+            result = "Phương trình có nghiệm: x = " + (-(b / a).toFixed(2));
+          } else {
+            if (b === 0) {
+              result = "Vì a = 0 và b = 0 => Phương trình 0x + 0 = 0 có vô số nghiệm";
+            } else {
+              result = "Vì b = " + b + " (b ≠ 0) => Phương trình 0x + " + b + " vô nghiệm";
+            }
+          }
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

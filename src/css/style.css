@@ -1,10 +1,13 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
 
-html, body {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.5;
@@ -18,7 +21,9 @@ html, body {
   box-shadow: 0 10px 16px 0 #ddd;
 }
 
-input[type=number], input[type=text], select {
+input[type="number"],
+input[type="text"],
+select {
   width: 100%;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -30,8 +35,10 @@ input[type=number], input[type=text], select {
   padding: 12px 20px;
 }
 
-legend {
-  color: #0000cd;
+h3 {
+  color: #fff;
+  background-color: #333;
+  padding: 0 4px;
 }
 
 label {
@@ -40,10 +47,6 @@ label {
 
 .mb-2 {
   margin-bottom: 10px;
-}
-
-fieldset {
-  border: 1px solid #ccc;
 }
 
 .alert {
@@ -68,7 +71,7 @@ fieldset {
 }
 
 .btn-primary {
-  background-color: #008CBA; /* Blue */
+  background-color: #008cba; /* Blue */
   color: white;
 }
 
