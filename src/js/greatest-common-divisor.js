@@ -1,10 +1,8 @@
 /*
-  * (ƯCLN) của hai số nguyên (greatest common divisor (gcd))
-  * Là số lớn nhất có thể chia được bởi hai số nguyên đó với số dư bằng không
-  * Ước chung lớn nhất g là số lớn nhất chia được bởi cả a và b mà không để lại số dư 
+  * Ước chung lớn nhất là số lớn nhất chia được bởi cả a và b mà không để lại số dư 
   */
 function greatestCommonDivisor(number) {
-  // greatestCommonDivisor(16);
+  // Tìm ước của một số
   if (number < 1) {
     return false;
   }
@@ -17,7 +15,7 @@ function greatestCommonDivisor(number) {
   return result;
 }
 
-function euclidAlgorithm(a, b) { // hai số tự nhiên a và b
+function euclidAlgorithm(a, b) { // Hai số tự nhiên a và b
   // Euclid's algorithm for greatest common divisor (gcd)
   if (a < 1 || b < 1) {
     return false;
@@ -35,6 +33,7 @@ function euclidAlgorithm(a, b) { // hai số tự nhiên a và b
 }
 
 function gcd(a, b) {
+  // (ƯCLN) của hai số nguyên (greatest common divisor (gcd))
   if (b === 0) {
     return a;
   } else {
