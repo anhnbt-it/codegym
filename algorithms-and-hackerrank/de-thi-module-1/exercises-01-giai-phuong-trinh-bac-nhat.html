@@ -33,9 +33,10 @@
         let b = parseFloat(document.getElementById("b").value);
         let output = document.getElementById("output");
         output.setAttribute("class", "alert alert-danger");
-        output.innerHTML = giaiPhuongTrinhBac1(a, b);
+        output.innerHTML = giaiPhuongTrinhBacNhat(a, b);
       }
-      function giaiPhuongTrinhBac1(a, b) {
+
+      function giaiPhuongTrinhBacNhat(a, b) {
         let result = 0;
         if (isNaN(a) || isNaN(b)) {
           result = "Vui lòng nhập vào một số nguyên";
