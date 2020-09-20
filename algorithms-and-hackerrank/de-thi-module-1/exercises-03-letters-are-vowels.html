@@ -15,7 +15,7 @@
   <script>
     
     let str = prompt("Nhập vào một chuỗi bất kỳ", "Hello World!");
-    let arrayFromStr = Array.from(str.toLowerCase());
+    let stringToArray = Array.from(str.toLowerCase());
     let counter = 0;
 
     function lettersAreVowels(element) {
@@ -27,15 +27,15 @@
     }
 
     if (str.length > 0) {
-      arrayFromStr.forEach(function(value, index) {
+      stringToArray.forEach(function(value, index) {
         if (lettersAreVowels(value)) {
-          arrayFromStr[index] = "<span class=\"highlight-text\">" + value + "</span>";
+          stringToArray[index] = "<span class=\"highlight-text\">" + value + "</span>";
           counter++;
         }
       });
 
       if (counter !== 0) {
-        document.write("Ký tự nguyên âm trong chuỗi: ", arrayFromStr.join(""));
+        document.write("Ký tự nguyên âm trong chuỗi: ", stringToArray.join(""));
         document.write("<br>Số ký tự nguyên âm = ", counter);
       } else {
         document.write("Không tìm thấy ký tự nguyên âm nào");
