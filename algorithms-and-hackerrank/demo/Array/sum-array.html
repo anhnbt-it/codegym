@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sum Array</title>
+</head>
+<body>
+  <script>
+    // let array = [1, 2, 3, 4, 5];
+    let array = [
+      [1, 2, 3], // Đây là dòng đầu tiên
+      [4, 5, 6], // Đây là dòng tiếp theo
+      [7, 8, 9] // Đây là dòng cuối cùng
+    ]; // Đây là mảng 3x3
+
+    let total = 0;
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array[i].length; j++) {
+        total += array[i][j];
+      }
+    }
+    document.write(total);
+  </script>
+</body>
+</html>

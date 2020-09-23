@@ -1,4 +1,4 @@
-function getCircleArea(r) {
+function calcCircleArea(r) {
   if (isNaN(parseFloat(r))) {
     return "Not a number";
   }
@@ -6,7 +6,7 @@ function getCircleArea(r) {
   return Math.PI * (r ** 2);
 }
 
-function getCircumference(r) {
+function calcCircumference(r) {
   if (isNaN(parseFloat(r))) {
     return "Not a number";
   }

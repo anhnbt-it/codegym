@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="myCanvas" width="150" height="150"></canvas>
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const ballRadius = 10;
+    let x = canvas.width / 2, y = canvas.height - 30, dx = 2; dy = -2;
+
+    setInterval(draw, 10);
+
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.fill();
+      ctx.closePath();
+    }
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBall();
+
+      if (x > canvas.width-ballRadius || x < ballRadius) {
+        dx = -dx;
+      }
+
+      if (y > canvas.height-ballRadius || y < ballRadius) {
+        dy = -dy;
+      }
+
+      x += dx;
+      y += dy;
+    }
+
+    function drawRectangle() {
+      ctx.fillStyle = 'green';
+      ctx.fillRect(canvas.width / 2 - 50 / 2, 10, 50, 50);
+    }
+
+    function drawText() {
+      ctx.font = "18px Arial";
+      ctx.fillStyle = 'black';
+      ctx.textAlign = "center";
+      ctx.fillText("Hello World", canvas.width / 2, 100);
+    }
+  </script>
+</body>
+
+</html>
