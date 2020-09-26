@@ -35,7 +35,7 @@
           <span></span>
         </div>
         <div class="mb-2">
-          <button class="btn btn-primary btn-block" type="submit">
+          <button class="btn btn-block" type="submit">
             Tính số ngày
           </button>
         </div>
@@ -51,9 +51,8 @@
       const month = document.getElementById("month");
       const year = document.getElementById("year");
       const output = document.createElement("div");
-      const JANUARY = 1, FEBRUARY = 2, MARCH = 3, APRIL = 4, MAY = 5,
-        JUNE = 6, JULY = 7, AUGUST = 8, SEPTEMBER = 9, OCTOBER = 10,
-        NOVEMBER = 11, DECEMBER = 12;
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+      'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         
       form.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -70,23 +69,24 @@
         document.getElementById("myForm").prepend(output);
       });
       
-      function getNumberOfDaysInAMonth(month, year, msg = "", daysInMonth = 31) {
-        switch (month) {
-          case FEBRUARY:
+      function getNumberOfDaysInAMonth(mo, year, msg = "", daysInMonth = 31) {
+        mo = mo - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)
+        switch (months[mo]) {
+          case 'Feb':
             if (isLeapYear(year)) {
               daysInMonth = 29;
             } else {
               daysInMonth = 28;
             }
             break;
-          case APRIL:
-          case JUNE:
-          case SEPTEMBER:
-          case NOVEMBER:
+          case 'Apr':
+          case 'Jun':
+          case 'Sep':
+          case 'Nov':
             daysInMonth = 30;
             break;
         }
-        msg = "Tháng " + month + " năm " + year + " có " + daysInMonth + " ngày"
+        msg = "Tháng " + mo + " năm " + year + " có " + daysInMonth + " ngày"
         return msg;
       }
     </script>
