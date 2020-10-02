@@ -1,27 +1,16 @@
 let products = [
-  {
-    name: "Điện Thoại iPhone SE 64GB (2020)",
-    image: "images/iphone.jpg"
-  },
-  {
-    name: "Điện Thoại Samsung Galaxy S20",
-    image: "images/samsung.jpg"
-  },
-  {
-    name: "Điện Thoại Vsmart Active 3",
-    image: "images/vsmart.png"
-  },
-  {
-    name: "Điện thoại Xiaomi Redmi 9A (2GB/32GB)",
-    image: "images/xiaomi.jpg"
-  }
+  ["Điện Thoại iPhone SE 64GB (2020)", "", "./images/iphone.jpg"],
+  ["Điện Thoại Samsung Galaxy S20", "./images/samsung.jpg"],
+  ["Điện Thoại Vsmart Active 3", "./images/vsmart.png"],
+  ["Điện thoại Xiaomi Redmi 9A (2GB/32GB)", "./images/xiaomi.jpg"]
 ];
+console.log(products[0]);
 
 function showProduct() {
   let tbl = "<table>";
   tbl += '<thead><tr><th>Image</th><th>Product Name</th><th>' + products.length + ' products</th></tr></thead>';
   tbl += '<tbody>';
-  for (p in products) {
+  for (let p in products) {
     tbl += `<tr>
       <td><img width="140px" src="${products[p].image}" alt="${products[p].name}"></td>
       <td>${products[p].name}</td>
@@ -38,11 +27,15 @@ function showProduct() {
 
 function addProduct() {
   let name = document.getElementById("name");
+  let price = document.getElementById("price");
   if (name.value === "") {
     alert("Please enter name");
     name.focus();
+  } else if (price.value === "") {
+    alert("Please enter price");
+    price.focus();
   } else {
-    products.unshift({name: name.value, image: "images/no-image.jpg"});
+    products.unshift([name, price, "images/no-image.jpg"]);
   }
   name.value = '';
   showProduct();
