@@ -2,7 +2,7 @@ package com.anhnbt.practices;
 
 import java.util.Scanner;
 
-public class Rectangle {
+public class AreaOfRectangle {
     public static void main(String[] args) {
         double width, height;
 
@@ -14,7 +14,7 @@ public class Rectangle {
         System.out.println("Enter height: ");
         height = scanner.nextDouble();
 
-        System.out.println("Area is: " + getArea(width, height));
+        System.out.println("Area of the rectangle is: " + getArea(width, height));
     }
 
     private static double getArea(double width, double height) {
