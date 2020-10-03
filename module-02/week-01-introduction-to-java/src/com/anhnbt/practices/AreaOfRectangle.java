@@ -7,14 +7,17 @@ public class AreaOfRectangle {
         double width, height;
 
         Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("Enter the width of the Rectangle: ");
+            width = scanner.nextDouble();
 
-        System.out.println("Enter width: ");
-        width = scanner.nextDouble();
+            System.out.println("Enter the height of the Rectangle: ");
+            height = scanner.nextDouble();
 
-        System.out.println("Enter height: ");
-        height = scanner.nextDouble();
-
-        System.out.println("Area of the rectangle is: " + getArea(width, height));
+            System.out.println("Area of the rectangle is: " + getArea(width, height));
+        } catch (Exception e) {
+            System.out.println("Something went wrong.");
+        }
     }
 
     private static double getArea(double width, double height) {
