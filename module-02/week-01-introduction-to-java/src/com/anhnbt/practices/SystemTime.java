@@ -1,4 +1,4 @@
-package com.anhnbt.systemtime;
+package com.anhnbt.practices;
 
 import java.util.Date;
 
