@@ -19,7 +19,7 @@ function primeNumbersLessThan(num) {
   return numbers;
 }
 
-console.log(primeNumbersLessThan(100));
+console.log(primeNumbersLessThan(20));
 
 // let numberArray = [4, 6, 7, 9, 12];
 // let idx = numberArray.findIndex(isPrime);
