@@ -21,9 +21,9 @@ function primeNumbersLessThan(num) {
 
 console.log(primeNumbersLessThan(100));
 
-let numberArray = [4, 6, 7, 9, 12];
-let idx = numberArray.findIndex(isPrime);
-console.log(numberArray.findIndex(isPrime));
-if (idx !== -1) {
-  console.log("Prime number is:", numberArray[idx]);
-}
+// let numberArray = [4, 6, 7, 9, 12];
+// let idx = numberArray.findIndex(isPrime);
+// console.log(numberArray.findIndex(isPrime));
+// if (idx !== -1) {
+//   console.log("Prime number is:", numberArray[idx]);
+// }
