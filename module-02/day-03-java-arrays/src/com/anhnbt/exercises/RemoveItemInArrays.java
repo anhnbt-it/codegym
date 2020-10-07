@@ -1,8 +1,8 @@
-package com.anhnbt.practices;
+package com.anhnbt.exercises;
 
 import java.util.Scanner;
 
-public class RemoveElementInArray {
+public class RemoveItemInArrays {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] numbers = {4, 12, 7, 8, 1, 0, 6, 9};
