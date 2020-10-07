@@ -2,7 +2,7 @@ package com.anhnbt.practices;
 
 import java.util.Scanner;
 
-public class MinValueInArray {
+public class MinValueInArrayWithMethod {
   public static void main(String[] args) {
     // declares an array of integers
     int[] numbers = {4, 12, 7, 8, 1, 0, 6, 9};
