@@ -7,8 +7,8 @@ public class RemoveElementInArray {
         Scanner sc = new Scanner(System.in);
         int[] numbers = {4, 12, 7, 8, 1, 0, 6, 9};
         System.out.print("value: ");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + " ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
         }
         System.out.println("\nEnter item want to remove: ");
         int x = sc.nextInt();
@@ -16,8 +16,8 @@ public class RemoveElementInArray {
         if (index != -1) {
             int[] newArray = removeItemInArray(numbers, index);
             System.out.print("new value: ");
-            for (int i = 0; i < newArray.length; i++) {
-                System.out.print(newArray[i] + " ");
+            for (int newNumber : newArray) {
+                System.out.print(newNumber + " ");
             }
         } else {
             System.out.println("No item!");
