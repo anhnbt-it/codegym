@@ -36,5 +36,6 @@ public class MatrixArray {
             }
             System.out.println("Maximum value is: " + max + ", row: " + rowIndex + ", column: " + columnIndex);
         }
+        scanner.close();
     }
 }
