@@ -1,6 +1,6 @@
-package firstpackage;
+package accessmodifier.firstpackage;
 
-public class FirstDataAccessModifier {
+public class FirstData {
     private String name;
     private void helloJava() {
         System.out.println("Hello Java!");

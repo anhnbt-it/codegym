@@ -1,8 +1,8 @@
-package firstpackage;
+package accessmodifier.firstpackage;
 
-public class FirstTestAccessModifier {
+public class FirstTest {
     public static void main(String[] args) {
-        FirstDataAccessModifier firstDataAccessModifier = new FirstDataAccessModifier();
+        FirstData firstDataAccessModifier = new FirstData();
 //        System.out.println(dataAccessModifier.name); // has private access
 //        System.out.println(dataAccessModifier.getName()); // has private access
         firstDataAccessModifier.setName("Nguyễn Bá Tuấn Anh");

@@ -1,11 +1,11 @@
-package secondpackage;
+package accessmodifier.secondpackage;
 
-import firstpackage.FirstDataAccessModifier;
+import accessmodifier.firstpackage.FirstData;
 
-public class SecondDataAccessModifier extends FirstDataAccessModifier {
+public class SecondData extends FirstData {
     private int age;
 
-    public SecondDataAccessModifier() {
+    public SecondData() {
     }
 
     void setAge(int age) {
@@ -21,7 +21,7 @@ public class SecondDataAccessModifier extends FirstDataAccessModifier {
     }
 
     void getInfo() {
-        SecondDataAccessModifier secondDataAccessModifier = new SecondDataAccessModifier();
+        SecondData secondDataAccessModifier = new SecondData();
         secondDataAccessModifier.setName("Nguyễn Bá Tùng Lâm");
         secondDataAccessModifier.info();
     }

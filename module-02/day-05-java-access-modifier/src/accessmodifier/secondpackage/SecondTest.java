@@ -1,8 +1,8 @@
-package secondpackage;
+package accessmodifier.secondpackage;
 
-public class SecondTestAccessModifier {
+public class SecondTest {
     public static void main(String[] args) {
-        SecondDataAccessModifier secondDataAccessModifier = new SecondDataAccessModifier();
+        SecondData secondDataAccessModifier = new SecondData();
 //        dataAccessModifier.msg(); // is not public. Cannot be accessed from outside package
         secondDataAccessModifier.say();
         secondDataAccessModifier.setAge(1);
