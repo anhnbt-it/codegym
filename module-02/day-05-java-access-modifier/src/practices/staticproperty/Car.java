@@ -1,8 +1,8 @@
 package practices.staticproperty;
 
 public class Car {
-    private String name;
-    private String engine;
+    private final String name;
+    private final String engine;
 
     public static int numberOfCars;
 

@@ -1,12 +1,12 @@
 package practices.staticmethod;
 
 public class Student {
-    private String name;
+    private final String name;
     private static String schools;
 
     public Student(String name, String schools) {
         this.name = name;
-        this.schools = schools; // HaNoi Aptech
+        Student.schools = schools; // HaNoi Aptech
     }
 
     static void change() {

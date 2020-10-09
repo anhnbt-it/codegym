@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AccessModifier.iml" filepath="$PROJECT_DIR$/AccessModifier.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day-05-java-access-modifier.iml" filepath="$PROJECT_DIR$/day-05-java-access-modifier.iml" />
     </modules>
   </component>
 </project>

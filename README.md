@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="120" height="33" src="https://anhnbt.com/images/logo-anhnbt.png">
+</p>
 # CodeGym
 The Git repository contains CodeGym exercise files
 ## Module 01: Bootcamp Preparation 2.0
@@ -18,9 +21,6 @@ The Git repository contains CodeGym exercise files
 ###### 15. Hàm 2
 ###### 16. Lập trình hướng đối tượng 1
 ###### 17. Lập trình hướng đối tượng 2
-- [Bài tập: Game đơn giản - di chuyển đối tượng](https://github.com/anhnbt-it/codegym-v2/tree/master/module-01/week-04-js-objects/sesson-17-js-oop-02/exercises-hero-games)
-- [Bài tập: Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva](https://github.com/anhnbt-it/codegym-v2/tree/master/module-01/week-04-js-objects/sesson-17-js-oop-02/exercises-adam-eva)
-- [Bài tập: Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn](https://github.com/anhnbt-it/codegym-v2/tree/master/module-01/week-04-js-objects/sesson-17-js-oop-02/exercises-switch-button-and-electriclamp)
 ###### 18. Thuật toán 1
 ###### 19. Thuật toán 2
 ###### Bootcamp Preparation Case Study
