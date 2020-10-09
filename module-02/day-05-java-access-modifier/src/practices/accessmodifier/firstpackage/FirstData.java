@@ -1,4 +1,4 @@
-package accessmodifier.firstpackage;
+package practices.accessmodifier.firstpackage;
 
 public class FirstData {
     private String name;

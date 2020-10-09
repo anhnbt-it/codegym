@@ -1,4 +1,4 @@
-package staticproperty;
+package practices.staticproperty;
 
 public class TestStaticProperty {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package accessmodifier.secondpackage;
+package practices.accessmodifier.secondpackage;
 
 public class SecondTest {
     public static void main(String[] args) {

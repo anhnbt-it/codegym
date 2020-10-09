@@ -1,4 +1,4 @@
-package staticmethod;
+package practices.staticmethod;
 
 public class Student {
     private String name;

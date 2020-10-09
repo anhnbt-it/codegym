@@ -1,4 +1,4 @@
-package staticproperty;
+package practices.staticproperty;
 
 public class Car {
     private String name;

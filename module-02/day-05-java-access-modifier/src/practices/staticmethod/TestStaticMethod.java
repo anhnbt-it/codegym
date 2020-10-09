@@ -1,4 +1,4 @@
-package staticmethod;
+package practices.staticmethod;
 
 public class TestStaticMethod {
     public static void main(String[] args) {

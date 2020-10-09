@@ -1,6 +1,6 @@
-package accessmodifier.secondpackage;
+package practices.accessmodifier.secondpackage;
 
-import accessmodifier.firstpackage.FirstData;
+import practices.accessmodifier.firstpackage.FirstData;
 
 public class SecondData extends FirstData {
     private int age;
