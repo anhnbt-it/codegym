@@ -1,4 +1,4 @@
-package com.anhnbt;
+package com.anhnbt.practices;
 
 /**
  * Created by IntelliJ IDEA.
