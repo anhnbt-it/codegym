@@ -22,7 +22,7 @@ public class Cylinder extends Circle {
         return height;
     }
 
-    public void setHeight() {
+    public void setHeight(double height) {
         this.height = height;
     }
 
