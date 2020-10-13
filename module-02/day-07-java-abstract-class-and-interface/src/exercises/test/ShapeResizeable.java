@@ -5,7 +5,12 @@
  * Time: 3:09 PM
  */
 
-package exercises;
+package exercises.test;
+
+import exercises.shape.Circle;
+import exercises.shape.Rectangle;
+import exercises.shape.Shape;
+import exercises.shape.Square;
 
 public class ShapeResizeable {
     public static void main(String[] args) {

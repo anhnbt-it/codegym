@@ -5,9 +5,12 @@
  * Time: 2:27 PM
  */
 
-package exercises;
+package exercises.shape;
 
-public class Circle extends Shape implements Resizeable {
+import exercises.Calculator;
+import exercises.resize.Resizeable;
+
+public class Circle extends Shape implements Resizeable, Calculator {
     private double radius = 1.0;
 
     public Circle() {
@@ -34,6 +37,16 @@ public class Circle extends Shape implements Resizeable {
     @Override
     public void resize(double percent) {
         setRadius(getRadius() * (percent / 100));
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2 * radius * Math.PI;
+    }
+
+    @Override
+    public double getArea() {
+        return radius * radius * Math.PI;
     }
 
     @Override

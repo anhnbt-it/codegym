@@ -5,7 +5,7 @@
  * Time: 2:23 PM
  */
 
-package exercises;
+package exercises.shape;
 
 public class Shape {
     private String color = "black";

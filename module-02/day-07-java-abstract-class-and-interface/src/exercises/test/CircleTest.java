@@ -5,7 +5,9 @@
  * Time: 2:37 PM
  */
 
-package exercises;
+package exercises.test;
+
+import exercises.shape.Circle;
 
 public class CircleTest {
     public static void main(String[] args) {

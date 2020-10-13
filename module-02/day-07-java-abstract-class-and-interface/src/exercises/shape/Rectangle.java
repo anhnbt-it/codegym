@@ -5,9 +5,12 @@
  * Time: 2:43 PM
  */
 
-package exercises;
+package exercises.shape;
 
-public class Rectangle extends Shape implements Resizeable {
+import exercises.Calculator;
+import exercises.resize.Resizeable;
+
+public class Rectangle extends Shape implements Resizeable, Calculator {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -46,6 +49,16 @@ public class Rectangle extends Shape implements Resizeable {
     public void resize(double percent) {
         setWidth(getWidth() * (percent / 100));
         setLength(getLength() * (percent / 100));
+    }
+
+    @Override
+    public double getPerimeter() {
+        return (width + length) * 2;
+    }
+
+    @Override
+    public double getArea() {
+        return width * length;
     }
 
     @Override

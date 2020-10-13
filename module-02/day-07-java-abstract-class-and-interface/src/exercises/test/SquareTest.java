@@ -5,7 +5,9 @@
  * Time: 3:01 PM
  */
 
-package exercises;
+package exercises.test;
+
+import exercises.shape.Square;
 
 public class SquareTest {
     public static void main(String[] args) {

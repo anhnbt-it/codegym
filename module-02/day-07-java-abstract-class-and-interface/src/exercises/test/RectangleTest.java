@@ -5,7 +5,9 @@
  * Time: 2:49 PM
  */
 
-package exercises;
+package exercises.test;
+
+import exercises.shape.Rectangle;
 
 public class RectangleTest {
     public static void main(String[] args) {

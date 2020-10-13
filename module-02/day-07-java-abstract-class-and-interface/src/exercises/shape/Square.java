@@ -5,9 +5,13 @@
  * Time: 2:53 PM
  */
 
-package exercises;
+package exercises.shape;
 
-public class Square extends Rectangle implements Resizeable {
+import exercises.Calculator;
+import exercises.color.Colorable;
+import exercises.resize.Resizeable;
+
+public class Square extends Rectangle implements Resizeable, Calculator, Colorable {
     public Square() {
 
     }
@@ -37,6 +41,21 @@ public class Square extends Rectangle implements Resizeable {
     @Override
     public void setLength(double side) {
         setSide(side);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return getSide() * 4;
+    }
+
+    @Override
+    public double getArea() {
+        return getSide() * getSide();
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
     }
 
     @Override
