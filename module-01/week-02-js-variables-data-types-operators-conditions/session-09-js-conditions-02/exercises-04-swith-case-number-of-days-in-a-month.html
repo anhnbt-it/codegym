@@ -65,29 +65,29 @@
           }
         });
         output.setAttribute("class", "alert alert-danger");
-        output.textContent = getNumberOfDaysInAMonth(parseInt(month.value), parseInt(year.value));
+        let daysInMonth = getDaysOfMonth(parseInt(month.value), parseInt(year.value));
+        output.textContent = "Tháng " + mo + " năm " + year + " có " + daysInMonth + " ngày";
         document.getElementById("myForm").prepend(output);
       });
       
-      function getNumberOfDaysInAMonth(mo, year, msg = "", daysInMonth = 31) {
-        mo = mo - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)
-        switch (months[mo]) {
+      function getDaysOfMonth(month, year) {
+        month = month - 1; // Adjust month number for array index (1 = Jan, 12 = Dec)
+        switch (months[month]) {
           case 'Feb':
             if (isLeapYear(year)) {
-              daysInMonth = 29;
+              return 29;
             } else {
-              daysInMonth = 28;
+              return 28;
             }
             break;
           case 'Apr':
           case 'Jun':
           case 'Sep':
           case 'Nov':
-            daysInMonth = 30;
+            return 30;
             break;
         }
-        msg = "Tháng " + mo + " năm " + year + " có " + daysInMonth + " ngày"
-        return msg;
+        return 31;
       }
     </script>
   </body>
