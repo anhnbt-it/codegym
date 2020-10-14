@@ -5,9 +5,9 @@
  * Time: 9:29 AM
  */
 
-package test;
+package com.anhnbt.calculator.test;
 
-import com.anhnbt.Calculator;
+import com.anhnbt.calculator.Calculator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

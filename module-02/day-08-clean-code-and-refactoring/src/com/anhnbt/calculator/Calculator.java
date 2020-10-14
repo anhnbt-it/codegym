@@ -1,4 +1,4 @@
-package com.anhnbt;
+package com.anhnbt.calculator;
 
 /**
  * Created by IntelliJ IDEA.
